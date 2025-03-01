@@ -1,6 +1,7 @@
 
 import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -99,7 +100,9 @@ const Footer = () => {
                 <span className="text-gray-400">623700, Свердловская обл., г. Березовский, ул. Ольховая, д. 12</span>
               </li>
             </ul>
-            <Button className="cta-button mt-6">Связаться с нами</Button>
+            <a href="/contacts#contact">
+              <Button className="cta-button mt-6">Связаться с нами</Button>
+            </a>
           </div>
         </div>
 

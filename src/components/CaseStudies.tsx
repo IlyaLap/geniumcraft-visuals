@@ -169,7 +169,7 @@ const CaseStudies = () => {
       </div>
 
       <Dialog open={selectedCase !== null} onOpenChange={(open) => !open && setSelectedCase(null)}>
-        <DialogContent className="bg-genium-black-light border-genium-purple/30 text-white max-w-3xl">
+        <DialogContent className="bg-genium-black-light border-genium-purple/30 text-white max-w-3xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">
               {selectedCase !== null && caseStudies[selectedCase].title}
