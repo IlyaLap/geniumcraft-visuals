@@ -32,7 +32,7 @@ const Footer = () => {
                 <Linkedin size={18} />
               </a>
               <a 
-                href="mailto:info@geniumsites.ru" 
+                href="mailto:geniumsites@outlook.com" 
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="Email"
               >
@@ -88,15 +88,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone size={18} className="text-genium-purple-light mr-3 mt-1" />
-                <span className="text-gray-400">+7 (XXX) XXX-XX-XX</span>
+                <span className="text-gray-400">+7 985 007 8282</span>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="text-genium-purple-light mr-3 mt-1" />
-                <span className="text-gray-400">info@geniumsites.ru</span>
+                <span className="text-gray-400">geniumsites@outlook.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="text-genium-purple-light mr-3 mt-1" />
-                <span className="text-gray-400">г. Москва, ул. Примерная, д. 123</span>
+                <span className="text-gray-400">623700, Свердловская обл., г. Березовский, ул. Ольховая, д. 12</span>
               </li>
             </ul>
             <Button className="cta-button mt-6">Связаться с нами</Button>

@@ -4,6 +4,13 @@ import { useAnimateOnScroll } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/dialog';
 
 const caseStudies = [
   {
@@ -14,7 +21,21 @@ const caseStudies = [
     metrics: [
       { label: 'Рост конверсии', value: '+75%' },
       { label: 'Средний чек', value: '+25%' }
-    ]
+    ],
+    detailedDescription: `Клиент: Крупный интернет-магазин электроники
+
+Задача: Увеличить конверсию, улучшить UX/UI дизайн и оптимизировать воронку продаж.
+
+Решение: Мы полностью переработали интерфейс магазина, упростили процесс оформления заказа с 5 до 2 шагов, внедрили систему персонализированных рекомендаций на основе поведения пользователя и оптимизировали скорость загрузки страниц.
+
+Результаты:
+• Повышение конверсии на 75%
+• Увеличение среднего чека на 25%
+• Сокращение времени пребывания в корзине на 40%
+• Рост повторных покупок на 35%
+• Улучшение позиций в поисковой выдаче на 28 позиций
+
+Срок реализации: 6 недель`
   },
   {
     title: 'Корпоративный сайт для IT-компании',
@@ -24,7 +45,21 @@ const caseStudies = [
     metrics: [
       { label: 'Заявки', value: '+120%' },
       { label: 'Позиции в поиске', value: '+32' }
-    ]
+    ],
+    detailedDescription: `Клиент: IT-компания, специализирующаяся на корпоративных решениях
+
+Задача: Разработать современный корпоративный сайт, который бы отражал инновационный характер компании и привлекал квалифицированные лиды.
+
+Решение: Мы создали адаптивный многостраничный сайт с уникальным дизайном, интерактивными элементами и детальным описанием услуг. Была внедрена система отслеживания лидов, интеграция с CRM и настроена SEO-оптимизация.
+
+Результаты:
+• Увеличение количества заявок на 120%
+• Улучшение позиций в поисковой выдаче на 32 пункта
+• Снижение показателя отказов на 45%
+• Увеличение времени, проведенного на сайте, на 68%
+• Рост органического трафика на 95%
+
+Срок реализации: 8 недель`
   },
   {
     title: 'Сайт для юридической фирмы',
@@ -34,13 +69,28 @@ const caseStudies = [
     metrics: [
       { label: 'Рост лидов', value: '+90%' },
       { label: 'Время на сайте', value: '+68%' }
-    ]
+    ],
+    detailedDescription: `Клиент: Юридическая фирма, предоставляющая услуги бизнесу
+
+Задача: Создать премиальный сайт, который бы отражал высокий статус компании и привлекал клиентов из сегмента крупного бизнеса.
+
+Решение: Был разработан имиджевый сайт с элегантным дизайном, удобной структурой и продуманным пользовательским путем. Особое внимание было уделено представлению кейсов и экспертизы команды. Интегрирована система онлайн-консультаций и бронирования встреч.
+
+Результаты:
+• Увеличение квалифицированных лидов на 90%
+• Рост времени, проведенного на сайте, на 68%
+• Увеличение конверсии посетителей в клиентов на 55%
+• Повышение среднего чека на 35%
+• Улучшение узнаваемости бренда на 40%
+
+Срок реализации: 10 недель`
   }
 ];
 
 const CaseStudies = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
+  const [selectedCase, setSelectedCase] = useState<number | null>(null);
 
   return (
     <section className="py-20" id="case-studies">
@@ -108,6 +158,7 @@ const CaseStudies = () => {
                 <Button 
                   variant="ghost" 
                   className="text-genium-purple-light hover:text-white hover:bg-genium-purple/20 transition-all duration-300 w-full"
+                  onClick={() => setSelectedCase(index)}
                 >
                   Подробнее <ArrowUpRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Button>
@@ -116,6 +167,51 @@ const CaseStudies = () => {
           ))}
         </div>
       </div>
+
+      <Dialog open={selectedCase !== null} onOpenChange={(open) => !open && setSelectedCase(null)}>
+        <DialogContent className="bg-genium-black-light border-genium-purple/30 text-white max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">
+              {selectedCase !== null && caseStudies[selectedCase].title}
+            </DialogTitle>
+            <DialogDescription className="text-gray-300">
+              {selectedCase !== null && caseStudies[selectedCase].category}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4">
+            {selectedCase !== null && (
+              <>
+                <div className="rounded-lg overflow-hidden mb-6">
+                  <img 
+                    src={caseStudies[selectedCase].image} 
+                    alt={caseStudies[selectedCase].title}
+                    className="w-full h-64 object-cover"
+                  />
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-6">
+                  {caseStudies[selectedCase].metrics.map((metric, index) => (
+                    <div key={index} className="bg-genium-purple/10 rounded-lg p-4">
+                      <p className="text-sm text-gray-300">{metric.label}</p>
+                      <p className="text-2xl font-bold text-genium-purple-light">{metric.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="whitespace-pre-line text-gray-300">
+                  {caseStudies[selectedCase].detailedDescription}
+                </div>
+                <div className="mt-8 flex justify-center">
+                  <Button 
+                    className="cta-button"
+                    onClick={() => setSelectedCase(null)}
+                  >
+                    Связаться с нами
+                  </Button>
+                </div>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

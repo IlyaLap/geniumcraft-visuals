@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import CaseStudies from '@/components/CaseStudies';
 import Footer from '@/components/Footer';
@@ -55,9 +56,11 @@ const ProjectsPage = () => {
                 <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                   Доверьте нам разработку вашего сайта и присоединитесь к списку наших довольных клиентов. Мы поможем вам создать проект, которым вы будете гордиться.
                 </p>
-                <Button className="cta-button">
-                  Обсудить проект <ChevronRight size={16} className="ml-1" />
-                </Button>
+                <Link to="/order">
+                  <Button className="cta-button">
+                    Обсудить проект <ChevronRight size={16} className="ml-1" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
