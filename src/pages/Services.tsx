@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Services from '@/components/Services';
 import Footer from '@/components/Footer';
@@ -54,9 +55,11 @@ const ServicesPage = () => {
               <p className="text-gray-300 mb-8">
                 Свяжитесь с нами сегодня, чтобы получить консультацию по вашему проекту и узнать, как мы можем помочь вам достичь ваших целей.
               </p>
-              <Button className="cta-button">
-                Заказать консультацию <ChevronRight size={16} className="ml-1" />
-              </Button>
+              <Link to="/order">
+                <Button className="cta-button">
+                  Заказать консультацию <ChevronRight size={16} className="ml-1" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

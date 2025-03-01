@@ -46,18 +46,18 @@ const Header = () => {
           <Link to="/services" className="text-white hover:text-genium-purple-light transition-colors">
             Услуги
           </Link>
-          <Link to="/case-studies" className="text-white hover:text-genium-purple-light transition-colors">
+          <Link to="/projects" className="text-white hover:text-genium-purple-light transition-colors">
             Проекты
           </Link>
           <Link to="/blog" className="text-white hover:text-genium-purple-light transition-colors">
             Блог
           </Link>
-          <Link to="/contact" className="text-white hover:text-genium-purple-light transition-colors">
+          <Link to="/contacts" className="text-white hover:text-genium-purple-light transition-colors">
             Контакты
           </Link>
           <Button 
             className="cta-button"
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => window.location.href = '/order'}
           >
             Заказать сайт
           </Button>
@@ -98,7 +98,7 @@ const Header = () => {
             Услуги
           </Link>
           <Link 
-            to="/case-studies" 
+            to="/projects" 
             className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -112,7 +112,7 @@ const Header = () => {
             Блог
           </Link>
           <Link 
-            to="/contact" 
+            to="/contacts" 
             className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -121,7 +121,7 @@ const Header = () => {
           <Button 
             className="cta-button mt-4 w-full"
             onClick={() => {
-              window.location.href = '/contact';
+              window.location.href = '/order';
               setIsMobileMenuOpen(false);
             }}
           >
