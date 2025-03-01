@@ -2,43 +2,50 @@
 import { useAnimateOnScroll } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
 import { Code, PenTool, BarChart, Repeat, Search, Megaphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
     icon: <PenTool size={32} />,
     title: 'Премиум дизайн веб-сайтов',
     description: 'Уникальный дизайн, соответствующий вашему бренду и привлекающий внимание целевой аудитории.',
-    badge: 'Популярный'
+    badge: 'Популярный',
+    link: '/services'
   },
   {
     icon: <Code size={32} />,
     title: 'Разработка веб-сайтов',
     description: 'Передача полного кода или реализация под ключ за дополнительную плату.',
-    badge: 'Быстрая доставка'
+    badge: 'Быстрая доставка',
+    link: '/services'
   },
   {
     icon: <Search size={32} />,
     title: 'Еженедельные SEO-блоги',
     description: 'Регулярные публикации оптимизированного контента для повышения органического трафика.',
-    badge: ''
+    badge: '',
+    link: '/blog'
   },
   {
     icon: <BarChart size={32} />,
     title: 'SEO-оптимизация',
     description: 'Комплексная оптимизация сайта для повышения позиций в поисковых системах.',
-    badge: ''
+    badge: '',
+    link: '/services'
   },
   {
     icon: <Repeat size={32} />,
     title: 'Поддержка и обслуживание',
     description: 'Регулярное обновление и поддержка сайта для обеспечения бесперебойной работы.',
-    badge: ''
+    badge: '',
+    link: '/services'
   },
   {
     icon: <Megaphone size={32} />,
     title: 'Маркетинговые стратегии',
     description: 'Разработка и реализация эффективных маркетинговых стратегий для вашего бизнеса.',
-    badge: 'Новый'
+    badge: 'Новый',
+    link: '/services'
   }
 ];
 
@@ -66,8 +73,9 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <Link 
               key={index} 
+              to={service.link}
               className={`glass-card p-8 rounded-xl card-hover transition-all duration-500 transform ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
@@ -87,7 +95,7 @@ const Services = () => {
                 )}
               </div>
               <p className="text-gray-300">{service.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
