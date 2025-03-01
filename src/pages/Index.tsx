@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import CaseStudies from '@/components/CaseStudies';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Set metadata for SEO
+    document.title = "Geniumsites - Премиум веб-сайты с высокой конверсией";
+    
+    // Create meta description if it doesn't exist
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Geniumsites - премиум веб-агентство, создающее высококонверсионные сайты с SEO-оптимизацией для российского рынка. Быстрая разработка за 24 часа.');
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <Hero />
+        <Services />
+        <CaseStudies />
+        <ContactForm />
+      </main>
+      <Footer />
     </div>
   );
 };
