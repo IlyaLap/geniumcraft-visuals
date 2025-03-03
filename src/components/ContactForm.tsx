@@ -58,36 +58,85 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Prepare data to send
+      const formattedAddons = Object.entries(formData.addons)
+        .filter(([_, value]) => value)
+        .map(([key]) => {
+          switch(key) {
+            case 'seoBlogs': return 'Еженедельные SEO-блоги (7 500 ₽/мес)';
+            case 'digitalMarketingConsulting': return 'Консультация Digital Marketing (15 000 ₽)';
+            case 'websiteAudit': return 'Аудит сайта (10 000 ₽)';
+            default: return key;
+          }
+        })
+        .join(', ');
+
+      // Format email body
+      const emailBody = `
+        Имя: ${formData.name}
+        Email: ${formData.email}
+        Телефон: ${formData.phone}
+        Тип сайта: ${formData.websiteType}
+        Тарифный план: ${formData.package}
+        Компания: ${formData.company}
+        Целевая аудитория: ${formData.audience}
+        Желаемые функции: ${formData.features}
+        Текущий хостинг-провайдер: ${formData.hostingProvider}
+        Дополнительные услуги: ${formattedAddons || 'Нет'}
+        Сообщение: ${formData.message}
+      `;
+
+      // Email data
+      const emailData = {
+        to: "geniumsites@outlook.com",
+        subject: `Новая заявка от ${formData.name}`,
+        body: emailBody
+      };
+
+      // In a real implementation, you would send this data to your email sending service
+      // For now, we'll simulate a successful email send
+      console.log("Email would be sent with data:", emailData);
+      
+      // Simulate email sending delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время.",
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          websiteType: '',
+          package: '',
+          company: '',
+          audience: '',
+          features: '',
+          message: '',
+          hostingProvider: '',
+          addons: {
+            seoBlogs: false,
+            digitalMarketingConsulting: false,
+            websiteAudit: false
+          }
+        });
+      }, 1500);
+    } catch (error) {
+      console.error("Error sending email:", error);
       setIsSubmitting(false);
       toast({
-        title: "Заявка отправлена!",
-        description: "Мы свяжемся с вами в ближайшее время.",
+        title: "Ошибка отправки",
+        description: "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте снова позже.",
+        variant: "destructive"
       });
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        websiteType: '',
-        package: '',
-        company: '',
-        audience: '',
-        features: '',
-        message: '',
-        hostingProvider: '',
-        addons: {
-          seoBlogs: false,
-          digitalMarketingConsulting: false,
-          websiteAudit: false
-        }
-      });
-    }, 1500);
+    }
   };
 
   return (

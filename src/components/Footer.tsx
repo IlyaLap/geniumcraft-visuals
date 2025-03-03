@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin, MapPin, Phone } from 'lucide-react';
+import { Instagram, Linkedin, MapPin, Phone, Mail, TikTok } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -59,6 +59,15 @@ const Footer = () => {
                   <path d="M20.572 4.088a1.58 1.58 0 0 0-.626.057 1.727 1.727 0 0 0-.552.264c-.012.008-1.281.76-3.261 1.918l-6.847 4.03-3.506 2.064c-.3.245-.54.623-.248 1.012.292.39.682.47.975.525.293.054.595.092.595.092l2.184.185s.292.688.44 1.04c.147.353.295.649.517.649a.89.89 0 0 0 .489-.19c.008-.004 1.787-1.155 1.787-1.155l2.194 1.903.078.046c.7.39 1.347.76 1.935.057a1.52 1.52 0 0 0 .716-.901c.006-.016.797-3.16 1.483-5.93l1.285-5.227c.11-.456.142-.883-.185-1.289a1.246 1.246 0 0 0-.957-.45zm-.212 1.389c-.02.091-.003-.003.042.266l.015.074c-.051.195-1.336 5.271-1.297 5.135-.144.574-.72 2.915-.72 2.915l-.145.57-.56-.487-2.566-2.226-1.446.935c.077-.094-.306.582-.306.582l-.067-.973-.984-3.292 8.034-4.733z" />
                 </svg>
               </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
+                aria-label="TikTok"
+              >
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.59-1.16-2.59-2.5 0-1.4 1.16-2.5 2.59-2.5.27 0 .53.04.77.13v-3.13c-.27-.03-.54-.05-.82-.05-3.06 0-5.5 2.5-5.5 5.5 0 3.03 2.46 5.5 5.5 5.5 3.02 0 5.5-2.47 5.5-5.5v-6.27a8.75 8.75 0 0 0 5.5 1.97v-3.13c-1.91 0-3.39-1.33-3.81-3.14Z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -66,19 +75,19 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-6">Услуги</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Дизайн веб-сайтов</a>
+                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Дизайн веб-сайтов</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Разработка</a>
+                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Разработка</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">SEO-оптимизация</a>
+                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">SEO-оптимизация</Link>
               </li>
               <li>
-                <span className="text-gray-400">Еженедельные SEO-блоги</span>
+                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Еженедельные SEO-блоги</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Поддержка сайтов</a>
+                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Поддержка сайтов</Link>
               </li>
             </ul>
           </div>
@@ -87,19 +96,19 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-6">Ссылки</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Главная</a>
+                <Link to="/" className="text-gray-400 hover:text-genium-purple-light transition-colors">Главная</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">О нас</a>
+                <Link to="/about" className="text-gray-400 hover:text-genium-purple-light transition-colors">О нас</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Проекты</a>
+                <Link to="/projects" className="text-gray-400 hover:text-genium-purple-light transition-colors">Проекты</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Блог</a>
+                <Link to="/blog" className="text-gray-400 hover:text-genium-purple-light transition-colors">Блог</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-genium-purple-light transition-colors">Контакты</a>
+                <Link to="/contacts" className="text-gray-400 hover:text-genium-purple-light transition-colors">Контакты</Link>
               </li>
             </ul>
           </div>
@@ -112,13 +121,17 @@ const Footer = () => {
                 <span className="text-gray-400">+7 985 007 8282</span>
               </li>
               <li className="flex items-start">
+                <Mail size={18} className="text-genium-purple-light mr-3 mt-1" />
+                <span className="text-gray-400">geniumsites@outlook.com</span>
+              </li>
+              <li className="flex items-start">
                 <MapPin size={18} className="text-genium-purple-light mr-3 mt-1" />
                 <span className="text-gray-400">623700, Свердловская обл., г. Березовский, ул. Ольховая, д. 12</span>
               </li>
             </ul>
-            <a href="/contacts#contact">
+            <Link to="/contacts#contact">
               <Button className="cta-button mt-6">Связаться с нами</Button>
-            </a>
+            </Link>
           </div>
         </div>
 

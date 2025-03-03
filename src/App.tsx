@@ -15,6 +15,7 @@ import IncreaseConversionBlog from "./pages/blogs/IncreaseConversionBlog";
 import SeoOptimizationBlog from "./pages/blogs/SeoOptimizationBlog";
 import PsychologyOfDesignBlog from "./pages/blogs/PsychologyOfDesignBlog";
 import MobileOptimizationBlog from "./pages/blogs/MobileOptimizationBlog";
+import AboutPage from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/contact" element={<ContactsPage />} />
           <Route path="/order" element={<OrderWebsitePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/case-studies" element={<ProjectsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
