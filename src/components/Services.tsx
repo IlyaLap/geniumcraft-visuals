@@ -106,7 +106,7 @@ const Services = () => {
             ) : (
               <div 
                 key={index}
-                className={`glass-card p-8 rounded-xl transition-all duration-500 transform ${
+                className={`glass-card p-8 rounded-xl card-hover transition-all duration-500 transform ${
                   isVisible 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-10'

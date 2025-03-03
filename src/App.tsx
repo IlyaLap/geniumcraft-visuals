@@ -11,6 +11,10 @@ import BlogPage from "./pages/Blog";
 import ContactsPage from "./pages/Contacts";
 import OrderWebsitePage from "./pages/OrderWebsite";
 import NotFound from "./pages/NotFound";
+import IncreaseConversionBlog from "./pages/blogs/IncreaseConversionBlog";
+import SeoOptimizationBlog from "./pages/blogs/SeoOptimizationBlog";
+import PsychologyOfDesignBlog from "./pages/blogs/PsychologyOfDesignBlog";
+import MobileOptimizationBlog from "./pages/blogs/MobileOptimizationBlog";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/increase-conversion" element={<IncreaseConversionBlog />} />
+          <Route path="/blog/seo-optimization-2025" element={<SeoOptimizationBlog />} />
+          <Route path="/blog/psychology-of-design" element={<PsychologyOfDesignBlog />} />
+          <Route path="/blog/mobile-optimization" element={<MobileOptimizationBlog />} />
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/contact" element={<ContactsPage />} />
           <Route path="/order" element={<OrderWebsitePage />} />

@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
@@ -16,7 +18,8 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Конверсия',
     date: '10 марта 2025',
-    readTime: '7 мин'
+    readTime: '7 мин',
+    slug: '/blog/increase-conversion'
   },
   {
     id: 2,
@@ -25,7 +28,8 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'SEO',
     date: '15 февраля 2025',
-    readTime: '10 мин'
+    readTime: '10 мин',
+    slug: '/blog/seo-optimization-2025'
   },
   {
     id: 3,
@@ -34,7 +38,8 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Дизайн',
     date: '20 января 2025',
-    readTime: '5 мин'
+    readTime: '5 мин',
+    slug: '/blog/psychology-of-design'
   },
   {
     id: 4,
@@ -43,7 +48,8 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Оптимизация',
     date: '5 апреля 2025',
-    readTime: '8 мин'
+    readTime: '8 мин',
+    slug: '/blog/mobile-optimization'
   }
 ];
 
@@ -162,12 +168,14 @@ const BlogPage = () => {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{post.title}</h3>
                     <p className="text-gray-300 mb-6">{post.excerpt}</p>
-                    <Button 
-                      variant="ghost" 
-                      className="text-genium-purple-light hover:text-white hover:bg-genium-purple/20 transition-all duration-300 w-full"
-                    >
-                      Читать полностью <ArrowUpRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </Button>
+                    <Link to={post.slug}>
+                      <Button 
+                        variant="ghost" 
+                        className="text-genium-purple-light hover:text-white hover:bg-genium-purple/20 transition-all duration-300 w-full"
+                      >
+                        Читать полностью <ArrowUpRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               ))}
