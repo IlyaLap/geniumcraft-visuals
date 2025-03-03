@@ -32,7 +32,7 @@ const Hero = () => {
 
             {/* Main Headline */}
             <h1 
-              className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight ${
+              className={`text-2xl md:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight ${
                 isLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ 
