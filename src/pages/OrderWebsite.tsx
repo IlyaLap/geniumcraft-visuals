@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -7,9 +7,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useAnimateOnScroll } from '@/lib/animations';
 import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const OrderWebsitePage = () => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
+  const contactFormRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     // Set metadata for SEO
@@ -25,39 +27,55 @@ const OrderWebsitePage = () => {
     metaDescription.setAttribute('content', 'Закажите премиальный веб-сайт с высокой конверсией от Geniumsites. Индивидуальный дизайн, быстрая разработка и SEO-оптимизация за 24 часа.');
   }, []);
 
+  const scrollToContactForm = () => {
+    contactFormRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   // Pricing plans
   const pricingPlans = [
     {
+      name: "Микро-сайт",
+      price: "от 30 000 ₽",
+      description: "Идеальное экономичное решение",
+      features: [
+        "1 лендинг",
+        "Адаптивная вёрстка",
+        "Базовая SEO-оптимизация",
+        "2 правки до утверждения",
+        "Доставка в виде исходного кода"
+      ],
+      popular: false
+    },
+    {
       name: "Стандарт",
-      price: "от 50 000 ₽",
+      price: "от 60 000 ₽",
       description: "Идеально для малого бизнеса и стартапов",
       features: [
         "Дизайн до 5 страниц",
         "Адаптивная вёрстка",
         "Базовая SEO-оптимизация",
-        "Форма обратной связи",
-        "Подключение аналитики",
+        "4 правки до утверждения",
+        "Полная интеграция"
       ],
       popular: false
     },
     {
       name: "Премиум",
-      price: "от 100 000 ₽",
+      price: "от 120 000 ₽",
       description: "Оптимальное решение для растущего бизнеса",
       features: [
         "Дизайн до 10 страниц",
         "Адаптивная вёрстка",
         "Расширенная SEO-оптимизация",
-        "Интеграция с CRM",
-        "Блог и личный кабинет",
+        "7 правок до утверждения",
         "3 месяца поддержки",
-        "Ускоренная разработка за 24 часа"
+        "Прототип за 24 часа"
       ],
       popular: true
     },
     {
       name: "Бизнес",
-      price: "от 200 000 ₽",
+      price: "от 250 000 ₽",
       description: "Комплексное решение для крупного бизнеса",
       features: [
         "Дизайн до 20 страниц",
@@ -65,12 +83,31 @@ const OrderWebsitePage = () => {
         "Полная SEO-оптимизация",
         "Интеграция с любыми системами",
         "Мультиязычность",
-        "Личный кабинет с расширенным функционалом",
-        "Ускоренная разработка за 24 часа",
+        "10 правок до утверждения",
+        "Прототип за 24 часа",
         "6 месяцев поддержки",
         "Еженедельные SEO-блоги"
       ],
       popular: false
+    }
+  ];
+
+  // Additional mini packages
+  const miniPackages = [
+    {
+      name: "Еженедельные SEO-блоги",
+      price: "7 500 ₽/мес",
+      description: "Регулярные SEO-оптимизированные статьи для вашего сайта"
+    },
+    {
+      name: "Консультация по Digital Marketing",
+      price: "15 000 ₽/сессия",
+      description: "Экспертный анализ и рекомендации по цифровому маркетингу"
+    },
+    {
+      name: "Аудит сайта",
+      price: "10 000 ₽",
+      description: "Подробный технический и SEO-аудит вашего текущего сайта"
     }
   ];
 
@@ -103,7 +140,7 @@ const OrderWebsitePage = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index}
@@ -139,11 +176,42 @@ const OrderWebsitePage = () => {
                   
                   <Button 
                     className={plan.popular ? "cta-button w-full" : "cta-button-outline w-full"} 
+                    onClick={scrollToContactForm}
                   >
                     Выбрать тариф
                   </Button>
                 </div>
               ))}
+            </div>
+            
+            <div className="max-w-4xl mx-auto mt-20">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">Дополнительные услуги</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {miniPackages.map((pack, index) => (
+                  <div 
+                    key={index}
+                    className={`glass-card p-6 rounded-xl overflow-hidden transition-all duration-500 transform ${
+                      isVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-10'
+                    }`}
+                    style={{ transitionDelay: `${(index + pricingPlans.length) * 150}ms` }}
+                  >
+                    <h4 className="text-xl font-semibold text-white mb-2">{pack.name}</h4>
+                    <div className="mb-4">
+                      <span className="text-2xl font-bold text-genium-purple-light">{pack.price}</span>
+                    </div>
+                    <p className="text-gray-300 mb-6">{pack.description}</p>
+                    <Button 
+                      variant="outline" 
+                      className="cta-button-outline w-full" 
+                      onClick={scrollToContactForm}
+                    >
+                      Добавить
+                    </Button>
+                  </div>
+                ))}
+              </div>
             </div>
             
             <div className="max-w-3xl mx-auto text-center mt-12">
@@ -237,7 +305,9 @@ const OrderWebsitePage = () => {
           </div>
         </section>
         
-        <ContactForm />
+        <div ref={contactFormRef}>
+          <ContactForm />
+        </div>
       </main>
       <Footer />
     </div>

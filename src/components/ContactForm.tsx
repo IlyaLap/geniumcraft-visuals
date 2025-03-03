@@ -13,6 +13,7 @@ import {
   SelectTrigger, 
   SelectValue 
 } from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/components/ui/use-toast';
 
 const ContactForm = () => {
@@ -25,10 +26,17 @@ const ContactForm = () => {
     email: '',
     phone: '',
     websiteType: '',
+    package: '',
     company: '',
     audience: '',
     features: '',
-    message: ''
+    message: '',
+    hostingProvider: '',
+    addons: {
+      seoBlogs: false,
+      digitalMarketingConsulting: false,
+      websiteAudit: false
+    }
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,6 +46,16 @@ const ContactForm = () => {
 
   const handleSelectChange = (name: string, value: string) => {
     setFormData(prevData => ({ ...prevData, [name]: value }));
+  };
+
+  const handleAddonChange = (addon: string, checked: boolean) => {
+    setFormData(prevData => ({
+      ...prevData,
+      addons: {
+        ...prevData.addons,
+        [addon]: checked
+      }
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -57,10 +75,17 @@ const ContactForm = () => {
         email: '',
         phone: '',
         websiteType: '',
+        package: '',
         company: '',
         audience: '',
         features: '',
-        message: ''
+        message: '',
+        hostingProvider: '',
+        addons: {
+          seoBlogs: false,
+          digitalMarketingConsulting: false,
+          websiteAudit: false
+        }
       });
     }, 1500);
   };
@@ -145,6 +170,79 @@ const ContactForm = () => {
                         </SelectContent>
                       </Select>
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="package">Выберите тарифный план</Label>
+                    <Select onValueChange={(value) => handleSelectChange('package', value)}>
+                      <SelectTrigger 
+                        id="package" 
+                        className="bg-genium-black/40 border-genium-purple/30 focus:border-genium-purple"
+                      >
+                        <SelectValue placeholder="Выберите тариф" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="micro">Микро-сайт (от 30 000 ₽)</SelectItem>
+                        <SelectItem value="standard">Стандарт (от 60 000 ₽)</SelectItem>
+                        <SelectItem value="premium">Премиум (от 120 000 ₽)</SelectItem>
+                        <SelectItem value="business">Бизнес (от 250 000 ₽)</SelectItem>
+                        <SelectItem value="custom">Индивидуальный</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Дополнительные услуги</Label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox 
+                          id="seoBlogs" 
+                          checked={formData.addons.seoBlogs}
+                          onCheckedChange={(checked) => 
+                            handleAddonChange('seoBlogs', checked as boolean)
+                          }
+                        />
+                        <Label htmlFor="seoBlogs" className="text-sm cursor-pointer">
+                          Еженедельные SEO-блоги (7 500 ₽/мес)
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox 
+                          id="digitalMarketing" 
+                          checked={formData.addons.digitalMarketingConsulting}
+                          onCheckedChange={(checked) => 
+                            handleAddonChange('digitalMarketingConsulting', checked as boolean)
+                          }
+                        />
+                        <Label htmlFor="digitalMarketing" className="text-sm cursor-pointer">
+                          Консультация Digital Marketing (15 000 ₽)
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox 
+                          id="audit" 
+                          checked={formData.addons.websiteAudit}
+                          onCheckedChange={(checked) => 
+                            handleAddonChange('websiteAudit', checked as boolean)
+                          }
+                        />
+                        <Label htmlFor="audit" className="text-sm cursor-pointer">
+                          Аудит сайта (10 000 ₽)
+                        </Label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="hostingProvider">Текущий хостинг-провайдер</Label>
+                    <Input 
+                      id="hostingProvider" 
+                      name="hostingProvider" 
+                      placeholder="Например: Timeweb, Beget, Reg.ru" 
+                      className="bg-genium-black/40 border-genium-purple/30 focus:border-genium-purple"
+                      value={formData.hostingProvider}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="space-y-2">
