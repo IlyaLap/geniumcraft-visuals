@@ -46,8 +46,8 @@ const ContactsPage = () => {
           <div className={`container mx-auto px-4 sm:px-6 transition-opacity duration-1000 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
-              <div className="glass-card p-8 rounded-xl">
+            <div className="grid grid-cols-1 gap-10 mb-20">
+              <div className="glass-card p-8 rounded-xl max-w-2xl mx-auto">
                 <h2 className="text-2xl font-bold text-white mb-8">Наши контакты</h2>
                 
                 <div className="space-y-6">
@@ -57,7 +57,7 @@ const ContactsPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Адрес</h3>
-                      <p className="text-gray-300">Москва, ул. Примерная, д. 123, офис 45</p>
+                      <p className="text-gray-300">623700, Свердловская обл., г. Березовский, ул. Ольховая, д. 12</p>
                     </div>
                   </div>
                   
@@ -67,7 +67,7 @@ const ContactsPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Телефон</h3>
-                      <p className="text-gray-300">+7 (123) 456-78-90</p>
+                      <p className="text-gray-300">+7 985 007 8282</p>
                     </div>
                   </div>
                   
@@ -77,7 +77,7 @@ const ContactsPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
-                      <p className="text-gray-300">info@geniumsites.ru</p>
+                      <p className="text-gray-300">geniumsites@outlook.com</p>
                     </div>
                   </div>
                   
@@ -113,36 +113,16 @@ const ContactsPage = () => {
                     </a>
                     <a href="#" className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors">
                       <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.579 6.855c.14-.465 0-.806-.666-.806h-2.196c-.56 0-.817.294-.956.619 0 0-1.116 2.712-2.695 4.472-.51.508-.742.67-1.02.67-.14 0-.343-.162-.343-.627V6.855c0-.558-.164-.806-.631-.806H9.689c-.348 0-.558.258-.558.504 0 .528.788.65.867 2.135v3.225c0 .707-.127.836-.407.836-.742 0-2.546-2.725-3.616-5.842-.21-.606-.42-.858-.98-.858H2.799c-.627 0-.752.294-.752.619 0 .582.742 3.462 3.46 7.271 1.812 2.601 4.363 4.011 6.687 4.011 1.392 0 1.563-.312 1.563-.85v-1.96c0-.627.133-.752.576-.752.327 0 .887.164 2.196 1.425 1.494 1.494 1.74 2.167 2.583 2.167h2.196c.627 0 .939-.313.759-.932-.197-.612-.907-1.5-1.848-2.553-.51-.605-1.277-1.26-1.51-1.584-.327-.42-.234-.607 0-.979 0 0 2.669-3.759 2.949-5.035z"/>
+                      </svg>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors">
+                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
                       </svg>
                     </a>
                   </div>
                 </div>
-              </div>
-              
-              <div className="glass-card p-8 rounded-xl">
-                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.347142575441!2d37.618696!3d55.755826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2sRed%20Square!5e0!3m2!1sen!2sru!4v1616683194500!5m2!1sen!2sru" 
-                    width="600" 
-                    height="450" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={true} 
-                    loading="lazy"
-                    className="w-full h-full"
-                  ></iframe>
-                </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-4">Как добраться</h3>
-                <p className="text-gray-300 mb-2">
-                  <span className="font-semibold">На метро:</span> Станция "Примерная", выход №3
-                </p>
-                <p className="text-gray-300 mb-2">
-                  <span className="font-semibold">На автомобиле:</span> Есть парковка рядом со зданием
-                </p>
-                <p className="text-gray-300">
-                  <span className="font-semibold">На общественном транспорте:</span> Автобусы №123, №456 до остановки "Примерная улица"
-                </p>
               </div>
             </div>
           </div>

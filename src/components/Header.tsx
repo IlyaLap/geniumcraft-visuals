@@ -82,7 +82,7 @@ const Header = () => {
         } md:hidden`}
         style={{ top: '60px' }}
       >
-        <nav className="flex flex-col p-8 space-y-8">
+        <nav className="flex flex-col p-8 space-y-8 bg-genium-black">
           <Link 
             to="/" 
             className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"

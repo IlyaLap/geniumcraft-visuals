@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, Clock, Star, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,7 +32,7 @@ const Hero = () => {
 
             {/* Main Headline */}
             <h1 
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight ${
+              className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight ${
                 isLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ 
@@ -52,7 +53,7 @@ const Hero = () => {
                 animation: isLoaded ? 'hero-text 0.8s ease-out forwards' : 'none'
               }}
             >
-              Мы помогаем российским компаниям привлекать больше клиентов, используя SEO-оптимизированные веб-сайты с премиальным дизайном и высокой конверсией.
+              Мы помогаем компаниям привлекать больше клиентов, используя SEO-оптимизированные веб-сайты с премиальным дизайном и высокой конверсией.
             </p>
 
             {/* CTA Buttons */}
@@ -65,12 +66,16 @@ const Hero = () => {
                 animation: isLoaded ? 'hero-text 0.8s ease-out forwards' : 'none'
               }}
             >
-              <Button className="cta-button text-base" onClick={() => window.location.href = '/contact'}>
-                Запланировать встречу <ChevronRight size={16} className="ml-1" />
-              </Button>
-              <Button variant="outline" className="cta-button-outline text-base">
-                Узнать больше
-              </Button>
+              <Link to="/order">
+                <Button className="cta-button text-base">
+                  Запланировать встречу <ChevronRight size={16} className="ml-1" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button variant="outline" className="cta-button-outline text-base">
+                  Узнать больше
+                </Button>
+              </Link>
             </div>
 
             {/* Feature Badges */}
