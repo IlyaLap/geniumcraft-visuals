@@ -17,6 +17,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Scroll to top when navigating to a new page
+    window.scrollTo(0, 0);
+  }, [window.location.pathname]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -42,6 +47,9 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-white hover:text-genium-purple-light transition-colors">
             Главная
+          </Link>
+          <Link to="/about" className="text-white hover:text-genium-purple-light transition-colors">
+            О нас
           </Link>
           <Link to="/services" className="text-white hover:text-genium-purple-light transition-colors">
             Услуги
@@ -89,6 +97,13 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Главная
+          </Link>
+          <Link 
+            to="/about" 
+            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            О нас
           </Link>
           <Link 
             to="/services" 

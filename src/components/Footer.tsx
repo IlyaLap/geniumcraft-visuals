@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin, MapPin, Phone, Mail, TikTok } from 'lucide-react';
+import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -19,21 +19,27 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 pt-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/geniumsites/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/genium-sites/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://x.com/GeniumSites" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="Twitter"
               >
@@ -42,7 +48,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://vk.com/id1032741356" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="VK"
               >
@@ -51,16 +59,18 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.facebook.com/people/Genium-Sites/61573543604846/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
-                aria-label="Telegram"
+                aria-label="Facebook"
               >
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.572 4.088a1.58 1.58 0 0 0-.626.057 1.727 1.727 0 0 0-.552.264c-.012.008-1.281.76-3.261 1.918l-6.847 4.03-3.506 2.064c-.3.245-.54.623-.248 1.012.292.39.682.47.975.525.293.054.595.092.595.092l2.184.185s.292.688.44 1.04c.147.353.295.649.517.649a.89.89 0 0 0 .489-.19c.008-.004 1.787-1.155 1.787-1.155l2.194 1.903.078.046c.7.39 1.347.76 1.935.057a1.52 1.52 0 0 0 .716-.901c.006-.016.797-3.16 1.483-5.93l1.285-5.227c.11-.456.142-.883-.185-1.289a1.246 1.246 0 0 0-.957-.45zm-.212 1.389c-.02.091-.003-.003.042.266l.015.074c-.051.195-1.336 5.271-1.297 5.135-.144.574-.72 2.915-.72 2.915l-.145.57-.56-.487-2.566-2.226-1.446.935c.077-.094-.306.582-.306.582l-.067-.973-.984-3.292 8.034-4.733z" />
-                </svg>
+                <Facebook size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.tiktok.com/@geniumsites?is_from_webapp=1&sender_device=pc" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
                 aria-label="TikTok"
               >

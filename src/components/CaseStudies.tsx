@@ -150,15 +150,10 @@ const CaseStudies = ({ limit = 0 }) => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
                 <p className="text-gray-300 mb-4">{study.description}</p>
-                <div className="flex justify-between text-sm text-gray-400 mb-6">
+                <div className="flex justify-between text-sm text-gray-400">
                   <span>Срок реализации: {study.duration}</span>
                   <span className="text-genium-purple-light">{study.improvement}</span>
                 </div>
-                <Link to={study.link}>
-                  <Button variant="outline" className="w-full border-genium-purple/30 text-genium-purple-light hover:bg-genium-purple/20">
-                    Подробнее
-                  </Button>
-                </Link>
               </div>
             </div>
           ))}

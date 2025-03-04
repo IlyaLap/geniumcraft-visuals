@@ -78,6 +78,31 @@ const Hero = () => {
               </Link>
             </div>
 
+            {/* Video Placeholder */}
+            <div 
+              className={`mt-10 w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ 
+                animationDelay: '900ms',
+                animation: isLoaded ? 'hero-text 0.8s ease-out forwards' : 'none'
+              }}
+            >
+              <div className="relative pb-[56.25%] bg-genium-black-light">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-genium-purple/80 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-genium-purple transition-colors">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <p className="text-white font-medium">Video Sales Letter</p>
+                    <p className="text-gray-400 text-sm">Узнайте, как мы можем помочь вашему бизнесу</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Feature Badges */}
             <div 
               className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 ${
