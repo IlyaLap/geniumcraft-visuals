@@ -35,7 +35,8 @@ const ContactForm = () => {
     addons: {
       seoBlogs: false,
       digitalMarketingConsulting: false,
-      websiteAudit: false
+      websiteAudit: false,
+      weeklySiteService: false
     }
   });
 
@@ -71,6 +72,7 @@ const ContactForm = () => {
             case 'seoBlogs': return 'Еженедельные SEO-блоги (7 500 ₽/мес)';
             case 'digitalMarketingConsulting': return 'Консультация Digital Marketing (15 000 ₽)';
             case 'websiteAudit': return 'Аудит сайта (10 000 ₽)';
+            case 'weeklySiteService': return 'Сервис сайта (15 000 ₽/нед)';
             default: return key;
           }
         })
@@ -124,7 +126,8 @@ const ContactForm = () => {
           addons: {
             seoBlogs: false,
             digitalMarketingConsulting: false,
-            websiteAudit: false
+            websiteAudit: false,
+            weeklySiteService: false
           }
         });
       }, 1500);
@@ -277,6 +280,18 @@ const ContactForm = () => {
                         />
                         <Label htmlFor="audit" className="text-sm cursor-pointer">
                           Аудит сайта (10 000 ₽)
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox 
+                          id="siteService" 
+                          checked={formData.addons.weeklySiteService}
+                          onCheckedChange={(checked) => 
+                            handleAddonChange('weeklySiteService', checked as boolean)
+                          }
+                        />
+                        <Label htmlFor="siteService" className="text-sm cursor-pointer">
+                          Сервис сайта (15 000 ₽/нед)
                         </Label>
                       </div>
                     </div>

@@ -89,22 +89,23 @@ const OrderWebsitePage = () => {
         "Еженедельные SEO-блоги"
       ],
       popular: false
-    },
-    {
-      name: "Индивидуальный",
-      price: "По запросу",
-      description: "Уникальное решение под ваши потребности",
-      features: [
-        "Индивидуальный объем работ",
-        "Гибкие условия",
-        "Персональный подход",
-        "Неограниченное количество правок",
-        "Индивидуальные сроки",
-        "Расширенная техническая поддержка"
-      ],
-      popular: false
     }
   ];
+
+  // Custom package (now separate)
+  const customPackage = {
+    name: "Индивидуальный",
+    price: "По запросу",
+    description: "Уникальное решение под ваши потребности",
+    features: [
+      "Индивидуальный объем работ",
+      "Гибкие условия",
+      "Персональный подход",
+      "Неограниченное количество правок",
+      "Индивидуальные сроки",
+      "Расширенная техническая поддержка"
+    ]
+  };
 
   // Additional mini packages
   const miniPackages = [
@@ -124,7 +125,7 @@ const OrderWebsitePage = () => {
       description: "Подробный технический и SEO-аудит вашего текущего сайта"
     },
     {
-      name: "Continuous Weekly Service",
+      name: "Сервис сайта",
       price: "15 000 ₽/нед",
       description: "Еженедельное обслуживание и обновление вашего сайта"
     }
@@ -159,7 +160,8 @@ const OrderWebsitePage = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            {/* Main pricing plans - 4 in a row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index}
@@ -203,6 +205,40 @@ const OrderWebsitePage = () => {
               ))}
             </div>
             
+            {/* Custom package - placed underneath the main plans */}
+            <div className="mt-12 max-w-3xl mx-auto">
+              <div 
+                className={`glass-card p-8 rounded-xl overflow-hidden relative card-hover transition-all duration-500 transform ${
+                  isVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${pricingPlans.length * 200}ms` }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-2">{customPackage.name}</h3>
+                <div className="mb-6">
+                  <span className="text-3xl font-bold text-genium-purple-light">{customPackage.price}</span>
+                </div>
+                <p className="text-gray-300 mb-6">{customPackage.description}</p>
+                
+                <ul className="space-y-3 mb-6">
+                  {customPackage.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-start">
+                      <CheckCircle2 className="text-genium-purple-light flex-shrink-0 mr-2 mt-1" size={18} />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button 
+                  className="cta-button-outline w-full" 
+                  onClick={scrollToContactForm}
+                >
+                  Выбрать тариф
+                </Button>
+              </div>
+            </div>
+            
             <div className="max-w-4xl mx-auto mt-20">
               <h3 className="text-2xl font-bold text-white mb-8 text-center">Дополнительные услуги</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -214,7 +250,7 @@ const OrderWebsitePage = () => {
                         ? 'opacity-100 translate-y-0' 
                         : 'opacity-0 translate-y-10'
                     }`}
-                    style={{ transitionDelay: `${(index + pricingPlans.length) * 150}ms` }}
+                    style={{ transitionDelay: `${(index + pricingPlans.length + 1) * 150}ms` }}
                   >
                     <h4 className="text-xl font-semibold text-white mb-2">{pack.name}</h4>
                     <div className="mb-4">
