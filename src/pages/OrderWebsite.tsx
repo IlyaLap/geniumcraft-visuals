@@ -89,6 +89,20 @@ const OrderWebsitePage = () => {
         "Еженедельные SEO-блоги"
       ],
       popular: false
+    },
+    {
+      name: "Индивидуальный",
+      price: "По запросу",
+      description: "Уникальное решение под ваши потребности",
+      features: [
+        "Индивидуальный объем работ",
+        "Гибкие условия",
+        "Персональный подход",
+        "Неограниченное количество правок",
+        "Индивидуальные сроки",
+        "Расширенная техническая поддержка"
+      ],
+      popular: false
     }
   ];
 
@@ -108,6 +122,11 @@ const OrderWebsitePage = () => {
       name: "Аудит сайта",
       price: "10 000 ₽",
       description: "Подробный технический и SEO-аудит вашего текущего сайта"
+    },
+    {
+      name: "Continuous Weekly Service",
+      price: "15 000 ₽/нед",
+      description: "Еженедельное обслуживание и обновление вашего сайта"
     }
   ];
 
@@ -140,7 +159,7 @@ const OrderWebsitePage = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index}
@@ -186,7 +205,7 @@ const OrderWebsitePage = () => {
             
             <div className="max-w-4xl mx-auto mt-20">
               <h3 className="text-2xl font-bold text-white mb-8 text-center">Дополнительные услуги</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {miniPackages.map((pack, index) => (
                   <div 
                     key={index}

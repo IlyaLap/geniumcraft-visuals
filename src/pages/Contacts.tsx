@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { useAnimateOnScroll } from '@/lib/animations';
-import { MapPin, Phone, Mail, Clock, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Youtube } from 'lucide-react';
 
 const ContactsPage = () => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
@@ -156,6 +156,14 @@ const ContactsPage = () => {
                       <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.59-1.16-2.59-2.5 0-1.4 1.16-2.5 2.59-2.5.27 0 .53.04.77.13v-3.13c-.27-.03-.54-.05-.82-.05-3.06 0-5.5 2.5-5.5 5.5 0 3.03 2.46 5.5 5.5 5.5 3.02 0 5.5-2.47 5.5-5.5v-6.27a8.75 8.75 0 0 0 5.5 1.97v-3.13c-1.91 0-3.39-1.33-3.81-3.14Z" />
                       </svg>
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/@GeniumSites" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors"
+                    >
+                      <Youtube size={20} />
                     </a>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -78,6 +78,15 @@ const Footer = () => {
                   <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.59-1.16-2.59-2.5 0-1.4 1.16-2.5 2.59-2.5.27 0 .53.04.77.13v-3.13c-.27-.03-.54-.05-.82-.05-3.06 0-5.5 2.5-5.5 5.5 0 3.03 2.46 5.5 5.5 5.5 3.02 0 5.5-2.47 5.5-5.5v-6.27a8.75 8.75 0 0 0 5.5 1.97v-3.13c-1.91 0-3.39-1.33-3.81-3.14Z" />
                 </svg>
               </a>
+              <a 
+                href="https://www.youtube.com/@GeniumSites" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube size={18} />
+              </a>
             </div>
           </div>
 
@@ -151,8 +160,8 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Geniumsites. Все права защищены.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-genium-purple-light text-sm">Политика конфиденциальности</a>
-              <a href="#" className="text-gray-500 hover:text-genium-purple-light text-sm">Условия использования</a>
+              <Link to="/privacy-policy" className="text-gray-500 hover:text-genium-purple-light text-sm">Политика конфиденциальности</Link>
+              <Link to="/terms-of-use" className="text-gray-500 hover:text-genium-purple-light text-sm">Условия использования</Link>
             </div>
           </div>
         </div>

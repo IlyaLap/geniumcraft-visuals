@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -17,7 +16,7 @@ const blogPosts = [
     excerpt: 'Практические советы и стратегии для значительного повышения конверсии вашего веб-сайта в короткие сроки. Узнайте, какие элементы дизайна и UX имеют наибольшее влияние на взаимодействие пользователей с вашим сайтом.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Конверсия',
-    date: '10 марта 2025',
+    date: '15 декабря 2024',
     readTime: '7 мин',
     slug: '/blog/increase-conversion'
   },
@@ -27,7 +26,7 @@ const blogPosts = [
     excerpt: 'Последние тренды и изменения в алгоритмах поисковых систем, которые влияют на ранжирование вашего сайта. Разбираем современные стратегии SEO и практики, которые уже не эффективны в текущих реалиях.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'SEO',
-    date: '15 февраля 2025',
+    date: '10 января 2025',
     readTime: '10 мин',
     slug: '/blog/seo-optimization-2025'
   },
@@ -37,7 +36,7 @@ const blogPosts = [
     excerpt: 'Научный подход к выбору цветовой палитры для вашего сайта, чтобы влиять на решения пользователей. Анализируем психологическое воздействие различных цветов и их комбинаций на целевую аудиторию в российском сегменте интернета.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Дизайн',
-    date: '20 января 2025',
+    date: '5 февраля 2025',
     readTime: '5 мин',
     slug: '/blog/psychology-of-design'
   },
@@ -47,7 +46,7 @@ const blogPosts = [
     excerpt: 'Как адаптировать ваш сайт для мобильных устройств и почему это может быть решающим фактором для успеха. Детальный разбор технических аспектов адаптивного дизайна и влияние мобильной оптимизации на конверсию и SEO.',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Оптимизация',
-    date: '5 апреля 2025',
+    date: '28 февраля 2025',
     readTime: '8 мин',
     slug: '/blog/mobile-optimization'
   }

@@ -1,11 +1,10 @@
-
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { useAnimateOnScroll } from '@/lib/animations';
 
 const IncreaseConversionBlog = () => {
@@ -53,7 +52,7 @@ const IncreaseConversionBlog = () => {
               <div className="flex items-center gap-6 text-sm text-gray-300">
                 <div className="flex items-center">
                   <Calendar size={14} className="mr-1" />
-                  10 марта 2025
+                  15 декабря 2024
                 </div>
                 <div className="flex items-center">
                   <Clock size={14} className="mr-1" />
@@ -141,11 +140,6 @@ const IncreaseConversionBlog = () => {
                       Назад к блогу
                     </Button>
                   </Link>
-                  
-                  <Button variant="outline" className="flex items-center gap-2 border-genium-purple/30 text-gray-300 hover:bg-genium-purple/20">
-                    <Share2 size={16} />
-                    Поделиться
-                  </Button>
                 </div>
               </div>
               
@@ -164,7 +158,7 @@ const IncreaseConversionBlog = () => {
                         </div>
                         <div>
                           <h4 className="text-white group-hover:text-genium-purple-light transition-colors">SEO-оптимизация в 2025 году</h4>
-                          <p className="text-xs text-gray-400">15 февраля 2025</p>
+                          <p className="text-xs text-gray-400">10 января 2025</p>
                         </div>
                       </div>
                     </Link>
@@ -180,7 +174,7 @@ const IncreaseConversionBlog = () => {
                         </div>
                         <div>
                           <h4 className="text-white group-hover:text-genium-purple-light transition-colors">Психология дизайна</h4>
-                          <p className="text-xs text-gray-400">20 января 2025</p>
+                          <p className="text-xs text-gray-400">5 февраля 2025</p>
                         </div>
                       </div>
                     </Link>
@@ -196,7 +190,7 @@ const IncreaseConversionBlog = () => {
                         </div>
                         <div>
                           <h4 className="text-white group-hover:text-genium-purple-light transition-colors">Мобильная оптимизация</h4>
-                          <p className="text-xs text-gray-400">5 апреля 2025</p>
+                          <p className="text-xs text-gray-400">28 февраля 2025</p>
                         </div>
                       </div>
                     </Link>

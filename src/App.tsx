@@ -17,6 +17,8 @@ import SeoOptimizationBlog from "./pages/blogs/SeoOptimizationBlog";
 import PsychologyOfDesignBlog from "./pages/blogs/PsychologyOfDesignBlog";
 import MobileOptimizationBlog from "./pages/blogs/MobileOptimizationBlog";
 import AboutPage from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +54,8 @@ const App = () => (
           <Route path="/order" element={<OrderWebsitePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/case-studies" element={<ProjectsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
