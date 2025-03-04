@@ -64,7 +64,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Prepare data to send
+      // Prepare formatted addons
       const formattedAddons = Object.entries(formData.addons)
         .filter(([_, value]) => value)
         .map(([key]) => {
@@ -78,8 +78,13 @@ const ContactForm = () => {
         })
         .join(', ');
 
-      // Format email body
-      const emailBody = `
+      // Prepare form data for Web3Forms
+      const web3FormsData = new FormData();
+      web3FormsData.append('access_key', 'cef68653-cc87-49ac-922d-3a04d7ac7989');
+      web3FormsData.append('subject', `Новая заявка от ${formData.name}`);
+      
+      // Construct detailed message
+      const message = `
         Имя: ${formData.name}
         Email: ${formData.email}
         Телефон: ${formData.phone}
@@ -90,27 +95,28 @@ const ContactForm = () => {
         Желаемые функции: ${formData.features}
         Текущий хостинг-провайдер: ${formData.hostingProvider}
         Дополнительные услуги: ${formattedAddons || 'Нет'}
-        Сообщение: ${formData.message}
+        Дополнительная информация: ${formData.message}
       `;
-
-      // Email data
-      const emailData = {
-        to: "geniumsites@outlook.com",
-        subject: `Новая заявка от ${formData.name}`,
-        body: emailBody
-      };
-
-      // In a real implementation, you would send this data to your email sending service
-      // For now, we'll simulate a successful email send
-      console.log("Email would be sent with data:", emailData);
       
-      // Simulate email sending delay
-      setTimeout(() => {
-        setIsSubmitting(false);
+      web3FormsData.append('message', message);
+      web3FormsData.append('from_name', formData.name);
+      web3FormsData.append('email', formData.email);
+      web3FormsData.append('phone', formData.phone);
+
+      // Send to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: web3FormsData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
         toast({
           title: "Заявка отправлена!",
           description: "Мы свяжемся с вами в ближайшее время.",
         });
+
         // Reset form
         setFormData({
           name: '',
@@ -130,15 +136,18 @@ const ContactForm = () => {
             weeklySiteService: false
           }
         });
-      }, 1500);
+      } else {
+        throw new Error(result.message || 'Ошибка при отправке');
+      }
     } catch (error) {
       console.error("Error sending email:", error);
-      setIsSubmitting(false);
       toast({
         title: "Ошибка отправки",
         description: "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте снова позже.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
