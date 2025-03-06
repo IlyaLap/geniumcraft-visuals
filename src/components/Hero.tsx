@@ -27,7 +27,7 @@ const Hero = () => {
               className={`hero-badge mb-6 ${isLoaded ? 'animate-slide-in opacity-100' : 'opacity-0'}`}
               style={{ transitionDelay: '100ms' }}
             >
-              <Clock size={14} className="mr-1" /> Премиум веб-сайты за 24 часа
+              <Clock size={14} className="mr-1" /> Протопип веб-сайта готов за 24 часа
             </div>
 
             {/* Main Headline */}
@@ -40,7 +40,7 @@ const Hero = () => {
                 animation: isLoaded ? 'hero-text 0.8s ease-out forwards' : 'none'
               }}
             >
-              Создаем <span className="text-gradient">высококонверсионные</span> веб-сайты для бизнеса
+              Создаем <span className="text-gradient">оптимизированные</span> веб-сайты для бизнеса
             </h1>
 
             {/* Subheadline */}
@@ -78,7 +78,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Video Placeholder */}
+            {/* Embedded YouTube Video */}
             <div 
               className={`mt-10 w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl ${
                 isLoaded ? 'opacity-100' : 'opacity-0'
@@ -89,17 +89,14 @@ const Hero = () => {
               }}
             >
               <div className="relative pb-[56.25%] bg-genium-black-light">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-genium-purple/80 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-genium-purple transition-colors">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
-                      </svg>
-                    </div>
-                    <p className="text-white font-medium">Video Sales Letter</p>
-                    <p className="text-gray-400 text-sm">Узнайте, как мы можем помочь вашему бизнесу</p>
-                  </div>
-                </div>
+                <iframe 
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/fDYJ5ALzWyU" 
+                  title="Video Sales Letter"
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
 
