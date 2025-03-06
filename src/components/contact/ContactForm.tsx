@@ -62,10 +62,10 @@ const ContactForm = () => {
         .filter(([_, value]) => value)
         .map(([key]) => {
           switch(key) {
-            case 'seoBlogs': return 'Еженедельные SEO-блоги (7 500 ₽/мес)';
+            case 'seoBlogs': return 'Продвижение Сайта (7 500 ₽/мес)';
             case 'digitalMarketingConsulting': return 'Консультация Digital Marketing (15 000 ₽)';
             case 'websiteAudit': return 'Аудит сайта (10 000 ₽)';
-            case 'weeklySiteService': return 'Сервис сайта (15 000 ₽/нед)';
+            case 'weeklySiteService': return 'Сервис сайта (от 5000 ₽/нед)';
             default: return key;
           }
         })

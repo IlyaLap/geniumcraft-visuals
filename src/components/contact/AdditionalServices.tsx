@@ -17,7 +17,7 @@ const AdditionalServices = ({ formData, handleAddonChange }: AddonFieldProps) =>
             }
           />
           <Label htmlFor="seoBlogs" className="text-sm cursor-pointer">
-            Еженедельные SEO-блоги (7 500 ₽/мес)
+            Продвижение Сайта (7 500 ₽/мес)
           </Label>
         </div>
         <div className="flex items-center space-x-2">
@@ -53,7 +53,7 @@ const AdditionalServices = ({ formData, handleAddonChange }: AddonFieldProps) =>
             }
           />
           <Label htmlFor="siteService" className="text-sm cursor-pointer">
-            Сервис сайта (15 000 ₽/нед)
+            Сервис сайта (от 5000 ₽/нед)
           </Label>
         </div>
       </div>

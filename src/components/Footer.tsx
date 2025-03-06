@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-genium-black pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
           <div className="space-y-4">
             <div className="flex items-center">
               <span className="text-white font-display text-2xl font-bold">
@@ -88,27 +88,6 @@ const Footer = () => {
                 <Youtube size={18} />
               </a>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-6">Услуги</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Дизайн веб-сайтов</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Разработка</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">SEO-оптимизация</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Еженедельные SEO-блоги</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-genium-purple-light transition-colors">Поддержка сайтов</Link>
-              </li>
-            </ul>
           </div>
 
           <div>

@@ -89,7 +89,7 @@ const ContactDetails = ({ formData, handleChange, handleSelectChange }: FormFiel
             <SelectValue placeholder="Выберите тариф" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="micro">Микро-сайт (от 30 000 ₽)</SelectItem>
+            <SelectItem value="micro">Лендинг (от 20 000 ₽)</SelectItem>
             <SelectItem value="standard">Стандарт (от 60 000 ₽)</SelectItem>
             <SelectItem value="premium">Премиум (от 120 000 ₽)</SelectItem>
             <SelectItem value="business">Бизнес (от 250 000 ₽)</SelectItem>

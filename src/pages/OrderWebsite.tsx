@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/contact/ContactForm';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -34,15 +34,15 @@ const OrderWebsitePage = () => {
   // Pricing plans
   const pricingPlans = [
     {
-      name: "Микро-сайт",
-      price: "от 30 000 ₽",
+      name: "Лендинг",
+      price: "от 20 000 ₽",
       description: "Идеальное экономичное решение",
       features: [
-        "1 лендинг",
+        "Дизайн одностраничный сайта",
         "Адаптивная вёрстка",
         "Базовая SEO-оптимизация",
         "2 правки до утверждения",
-        "Доставка в виде исходного кода"
+        "Прототип за 24 часа"
       ],
       popular: false
     },
@@ -55,7 +55,8 @@ const OrderWebsitePage = () => {
         "Адаптивная вёрстка",
         "Базовая SEO-оптимизация",
         "4 правки до утверждения",
-        "Полная интеграция"
+        "Полная интеграция",
+        "Прототип за 24 часа"
       ],
       popular: false
     },
@@ -103,16 +104,17 @@ const OrderWebsitePage = () => {
       "Персональный подход",
       "Неограниченное количество правок",
       "Индивидуальные сроки",
-      "Расширенная техническая поддержка"
+      "Расширенная техническая поддержка",
+      "Прототип за 24 часа"
     ]
   };
 
   // Additional mini packages
   const miniPackages = [
     {
-      name: "Еженедельные SEO-блоги",
+      name: "Продвижение Сайта",
       price: "7 500 ₽/мес",
-      description: "Регулярные SEO-оптимизированные статьи для вашего сайта"
+      description: "Регулярные SEO-оптимизированные"
     },
     {
       name: "Консультация по Digital Marketing",
@@ -126,7 +128,7 @@ const OrderWebsitePage = () => {
     },
     {
       name: "Сервис сайта",
-      price: "15 000 ₽/нед",
+      price: "от 5000 ₽/нед",
       description: "Еженедельное обслуживание и обновление вашего сайта"
     }
   ];
