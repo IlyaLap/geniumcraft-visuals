@@ -8,18 +8,6 @@ const ProjectDetails = ({ formData, handleChange }: FormFieldProps) => {
   return (
     <>
       <div className="space-y-2">
-        <Label htmlFor="hostingProvider">Текущий хостинг-провайдер</Label>
-        <Input 
-          id="hostingProvider" 
-          name="hostingProvider" 
-          placeholder="Например: Timeweb, Beget, Reg.ru" 
-          className="bg-genium-black/40 border-genium-purple/30 focus:border-genium-purple"
-          value={formData.hostingProvider}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className="space-y-2">
         <Label htmlFor="company">Описание компании</Label>
         <Textarea 
           id="company" 

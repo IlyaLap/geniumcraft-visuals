@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
@@ -59,7 +60,7 @@ const ContactsPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Адрес</h3>
-                      <p className="text-gray-300">623700, Свердловская обл., г. Березовский, ул. Ольховая, д. 12</p>
+                      <p className="text-gray-300">Александровский Проспект, 19, Свердловская Область, Россия, 623702</p>
                     </div>
                   </div>
                   
@@ -98,16 +99,6 @@ const ContactsPage = () => {
                 <div className="mt-10">
                   <h3 className="text-lg font-semibold text-white mb-4">Мы в социальных сетях</h3>
                   <div className="flex space-x-4">
-                    <a 
-                      href="https://www.instagram.com/geniumsites/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors"
-                    >
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.61 4 4 5.61 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4C18.39 20 20 18.39 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6ZM17.25 5.5C17.94 5.5 18.5 6.06 18.5 6.75C18.5 7.44 17.94 8 17.25 8C16.56 8 16 7.44 16 6.75C16 6.06 16.56 5.5 17.25 5.5ZM12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7ZM12 9C10.35 9 9 10.35 9 12C9 13.65 10.35 15 12 15C13.65 15 15 13.65 15 12C15 10.35 13.65 9 12 9Z"/>
-                      </svg>
-                    </a>
                     <a 
                       href="https://x.com/GeniumSites" 
                       target="_blank" 
@@ -163,6 +154,16 @@ const ContactsPage = () => {
                       className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors"
                     >
                       <Youtube size={20} />
+                    </a>
+                    <a 
+                      href="https://rutube.ru/channel/58553409/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-genium-purple/20 rounded-full flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/40 transition-colors"
+                    >
+                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.5 12C17.5 8.41 14.59 5.5 11 5.5s-6.5 2.91-6.5 6.5c0 1.47.49 2.82 1.3 3.91C6.92 17.92 8.83 19 11 19c3.59 0 6.5-2.91 6.5-6.5zm3 0c0 5.25-4.25 9.5-9.5 9.5S1.5 17.25 1.5 12 5.75 2.5 11 2.5s9.5 4.25 9.5 9.5zM11 13.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/>
+                      </svg>
                     </a>
                   </div>
                 </div>

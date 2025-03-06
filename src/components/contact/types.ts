@@ -15,6 +15,7 @@ export interface ContactFormData {
     digitalMarketingConsulting: boolean;
     websiteAudit: boolean;
     weeklySiteService: boolean;
+    yandexDirect: boolean;
   };
 }
 

@@ -130,6 +130,11 @@ const OrderWebsitePage = () => {
       name: "Сервис сайта",
       price: "от 5000 ₽/нед",
       description: "Еженедельное обслуживание и обновление вашего сайта"
+    },
+    {
+      name: "Яндекс Директ: Разработка и Ведение",
+      price: "от 5000 ₽",
+      description: "Настройка и управление рекламными кампаниями"
     }
   ];
 
@@ -162,12 +167,12 @@ const OrderWebsitePage = () => {
               </p>
             </div>
             
-            {/* Main pricing plans - 4 in a row */}
+            {/* Main pricing plans - 4 in a row with consistent heights */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index}
-                  className={`glass-card p-8 rounded-xl overflow-hidden relative card-hover transition-all duration-500 transform ${
+                  className={`glass-card p-8 rounded-xl overflow-hidden relative card-hover transition-all duration-500 transform flex flex-col ${
                     isVisible 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-10'
@@ -186,9 +191,9 @@ const OrderWebsitePage = () => {
                   <div className="mb-6">
                     <span className="text-3xl font-bold text-genium-purple-light">{plan.price}</span>
                   </div>
-                  <p className="text-gray-300 mb-6">{plan.description}</p>
+                  <p className="text-gray-300 mb-6 h-12">{plan.description}</p>
                   
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-6 flex-grow">
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start">
                         <CheckCircle2 className="text-genium-purple-light flex-shrink-0 mr-2 mt-1" size={18} />
@@ -198,7 +203,7 @@ const OrderWebsitePage = () => {
                   </ul>
                   
                   <Button 
-                    className={plan.popular ? "cta-button w-full" : "cta-button-outline w-full"} 
+                    className={plan.popular ? "cta-button w-full mt-auto" : "cta-button-outline w-full mt-auto"} 
                     onClick={scrollToContactForm}
                   >
                     Выбрать тариф
@@ -243,25 +248,25 @@ const OrderWebsitePage = () => {
             
             <div className="max-w-4xl mx-auto mt-20">
               <h3 className="text-2xl font-bold text-white mb-8 text-center">Дополнительные услуги</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {miniPackages.map((pack, index) => (
                   <div 
                     key={index}
-                    className={`glass-card p-6 rounded-xl overflow-hidden transition-all duration-500 transform ${
+                    className={`glass-card p-6 rounded-xl overflow-hidden transition-all duration-500 transform flex flex-col ${
                       isVisible 
                         ? 'opacity-100 translate-y-0' 
                         : 'opacity-0 translate-y-10'
                     }`}
                     style={{ transitionDelay: `${(index + pricingPlans.length + 1) * 150}ms` }}
                   >
-                    <h4 className="text-xl font-semibold text-white mb-2">{pack.name}</h4>
+                    <h4 className="text-xl font-semibold text-white mb-2 h-14">{pack.name}</h4>
                     <div className="mb-4">
                       <span className="text-2xl font-bold text-genium-purple-light">{pack.price}</span>
                     </div>
-                    <p className="text-gray-300 mb-6">{pack.description}</p>
+                    <p className="text-gray-300 mb-6 flex-grow">{pack.description}</p>
                     <Button 
                       variant="outline" 
-                      className="cta-button-outline w-full" 
+                      className="cta-button-outline w-full mt-auto" 
                       onClick={scrollToContactForm}
                     >
                       Добавить

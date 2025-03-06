@@ -56,6 +56,18 @@ const AdditionalServices = ({ formData, handleAddonChange }: AddonFieldProps) =>
             Сервис сайта (от 5000 ₽/нед)
           </Label>
         </div>
+        <div className="flex items-center space-x-2">
+          <Checkbox 
+            id="yandexDirect" 
+            checked={formData.addons.yandexDirect}
+            onCheckedChange={(checked) => 
+              handleAddonChange('yandexDirect', checked as boolean)
+            }
+          />
+          <Label htmlFor="yandexDirect" className="text-sm cursor-pointer">
+            Яндекс Директ: Разработка и Ведение (от 5000 ₽)
+          </Label>
+        </div>
       </div>
     </div>
   );

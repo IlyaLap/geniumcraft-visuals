@@ -78,7 +78,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Embedded YouTube Video */}
+            {/* Embedded Rutube Video */}
             <div 
               className={`mt-10 w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl ${
                 isLoaded ? 'opacity-100' : 'opacity-0'
@@ -91,7 +91,7 @@ const Hero = () => {
               <div className="relative pb-[56.25%] bg-genium-black-light">
                 <iframe 
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/fDYJ5ALzWyU" 
+                  src="https://rutube.ru/play/embed/7b187f907ad7bbdb700e87dabb329a9c" 
                   title="Video Sales Letter"
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

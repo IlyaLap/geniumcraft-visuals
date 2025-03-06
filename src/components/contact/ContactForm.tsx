@@ -29,7 +29,8 @@ const ContactForm = () => {
       seoBlogs: false,
       digitalMarketingConsulting: false,
       websiteAudit: false,
-      weeklySiteService: false
+      weeklySiteService: false,
+      yandexDirect: false
     }
   });
 
@@ -66,6 +67,7 @@ const ContactForm = () => {
             case 'digitalMarketingConsulting': return 'Консультация Digital Marketing (15 000 ₽)';
             case 'websiteAudit': return 'Аудит сайта (10 000 ₽)';
             case 'weeklySiteService': return 'Сервис сайта (от 5000 ₽/нед)';
+            case 'yandexDirect': return 'Яндекс Директ: Разработка и Ведение (от 5000 ₽)';
             default: return key;
           }
         })
@@ -86,7 +88,6 @@ const ContactForm = () => {
         Компания: ${formData.company}
         Целевая аудитория: ${formData.audience}
         Желаемые функции: ${formData.features}
-        Текущий хостинг-провайдер: ${formData.hostingProvider}
         Дополнительные услуги: ${formattedAddons || 'Нет'}
         Дополнительная информация: ${formData.message}
       `;
@@ -126,7 +127,8 @@ const ContactForm = () => {
             seoBlogs: false,
             digitalMarketingConsulting: false,
             websiteAudit: false,
-            weeklySiteService: false
+            weeklySiteService: false,
+            yandexDirect: false
           }
         });
       } else {
