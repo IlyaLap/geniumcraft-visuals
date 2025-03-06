@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/contact/ContactForm';
@@ -132,7 +131,7 @@ const OrderWebsitePage = () => {
       description: "Еженедельное обслуживание и обновление вашего сайта"
     },
     {
-      name: "Яндекс Директ: Разработка и Ведение",
+      name: "Яндекс Директ",
       price: "от 5000 ₽",
       description: "Настройка и управление рекламными кампаниями"
     }
@@ -299,7 +298,7 @@ const OrderWebsitePage = () => {
               <div className="glass-card p-8 rounded-xl">
                 <div className="w-14 h-14 flex items-center justify-center bg-genium-purple/20 text-genium-purple-light rounded-lg mb-6">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 2 12C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>

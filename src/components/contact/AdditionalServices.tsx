@@ -65,7 +65,7 @@ const AdditionalServices = ({ formData, handleAddonChange }: AddonFieldProps) =>
             }
           />
           <Label htmlFor="yandexDirect" className="text-sm cursor-pointer">
-            Яндекс Директ: Разработка и Ведение (от 5000 ₽)
+            Яндекс Директ (от 5000 ₽)
           </Label>
         </div>
       </div>
