@@ -1,4 +1,4 @@
-import { Linkedin, MapPin, Phone, Mail, Facebook, Youtube } from 'lucide-react';
+import { Linkedin, MapPinned, Phone, Mail, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -115,7 +115,7 @@ const Footer = () => {
                 <span className="text-gray-400">geniumsites@outlook.com</span>
               </li>
               <li className="flex items-start">
-                <MapPin size={18} className="text-genium-purple-light mr-3 mt-1" />
+                <MapPinned size={18} className="text-genium-purple-light mr-3 mt-1" />
                 <span className="text-gray-400">Александровский Проспект, 19, Свердловская Область, Россия, 623702</span>
               </li>
             </ul>
