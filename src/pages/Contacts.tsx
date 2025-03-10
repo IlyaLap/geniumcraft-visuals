@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
@@ -52,7 +51,7 @@ const ContactsPage = () => {
             <div className="grid grid-cols-1 gap-10 mb-20">
               <div className="glass-card p-8 rounded-xl max-w-2xl mx-auto">
                 <h2 className="text-2xl font-bold text-white mb-8">Наши контакты</h2>
-                
+              
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="w-12 h-12 bg-genium-purple/20 rounded-lg flex items-center justify-center mr-4 text-genium-purple-light">
@@ -63,7 +62,7 @@ const ContactsPage = () => {
                       <p className="text-gray-300">Александровский Проспект, 19, Свердловская Область, Россия, 623702</p>
                     </div>
                   </div>
-                  
+                
                   <div className="flex items-start">
                     <div className="w-12 h-12 bg-genium-purple/20 rounded-lg flex items-center justify-center mr-4 text-genium-purple-light">
                       <Phone size={24} />
@@ -71,9 +70,10 @@ const ContactsPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Телефон</h3>
                       <p className="text-gray-300">+7 985 007 8282</p>
+                      <p className="text-gray-300">+7 902 257-96-62</p>
                     </div>
                   </div>
-                  
+                
                   <div className="flex items-start">
                     <div className="w-12 h-12 bg-genium-purple/20 rounded-lg flex items-center justify-center mr-4 text-genium-purple-light">
                       <Mail size={24} />

@@ -1,4 +1,3 @@
-
 import { Linkedin, MapPinned, Phone, Mail, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -109,7 +108,10 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone size={18} className="text-genium-purple-light mr-3 mt-1" />
-                <span className="text-gray-400">+7 985 007 8282</span>
+                <div>
+                  <p className="text-gray-400">+7 985 007 8282</p>
+                  <p className="text-gray-400">+7 902 257-96-62</p>
+                </div>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="text-genium-purple-light mr-3 mt-1" />
