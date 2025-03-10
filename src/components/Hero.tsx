@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ChevronRight, Clock, Star, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -78,7 +77,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Embedded Rutube Video */}
+            {/* Embedded Rutube Video with updated link */}
             <div 
               className={`mt-10 w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl ${
                 isLoaded ? 'opacity-100' : 'opacity-0'
@@ -91,7 +90,7 @@ const Hero = () => {
               <div className="relative pb-[56.25%] bg-genium-black-light">
                 <iframe 
                   className="absolute inset-0 w-full h-full"
-                  src="https://rutube.ru/play/embed/7b187f907ad7bbdb700e87dabb329a9c" 
+                  src="https://rutube.ru/play/embed/32b44bc24c5f1a5401a8f10fb0cd1b47" 
                   title="Video Sales Letter"
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

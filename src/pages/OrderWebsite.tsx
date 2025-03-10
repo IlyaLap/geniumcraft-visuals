@@ -34,16 +34,16 @@ const OrderWebsitePage = () => {
   const pricingPlans = [
     {
       name: "Лендинг",
-      price: "от 20 000 ₽",
+      price: "от 17 500 ₽",
       description: "Идеальное экономичное решение",
       features: [
         "Дизайн одностраничный сайта",
         "Адаптивная вёрстка",
         "Базовая SEO-оптимизация",
         "2 правки до утверждения",
-        "Прототип за 24 часа"
+        "Прототип за 12 часов"
       ],
-      popular: false
+      popular: true
     },
     {
       name: "Стандарт",
@@ -71,7 +71,7 @@ const OrderWebsitePage = () => {
         "3 месяца поддержки",
         "Прототип за 24 часа"
       ],
-      popular: true
+      popular: false
     },
     {
       name: "Бизнес",
