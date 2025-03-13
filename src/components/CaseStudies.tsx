@@ -23,7 +23,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Редизайн интернет-магазина',
       description: 'Полный редизайн интернет-магазина с улучшением пользовательского опыта и оптимизацией конверсии.',
       category: 'ecommerce',
-      image: '/lovable-uploads/f85f4bd0-18e1-4dab-88f0-3620dedf00d1.png',
+      image: 'https://iili.io/3BYIKga.png',
       duration: '10 недель',
       improvement: 'Увеличение конверсии на 47%',
       link: '/projects'
@@ -33,7 +33,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Корпоративный сайт для IT-компании',
       description: 'Разработка современного корпоративного сайта с фокусом на привлечение новых клиентов и найм специалистов.',
       category: 'corporate',
-      image: '/lovable-uploads/b0bd971c-95a1-43d8-a983-7e4b68334fbf.png',
+      image: 'https://iili.io/3BYIwkx.png',
       duration: '13 недель',
       improvement: 'Рост заявок на 83%',
       link: '/projects'
@@ -43,7 +43,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Сайт для юридической фирмы',
       description: 'Создание элегантного и профессионального сайта для юридической фирмы с системой онлайн-консультаций.',
       category: 'corporate',
-      image: '/lovable-uploads/31c87bfe-2de4-4258-9af2-0fe81ce3e782.png',
+      image: 'https://iili.io/3BYIcml.png',
       duration: '16 недель',
       improvement: 'Увеличение новых клиентов на 61%',
       link: '/projects'
@@ -53,7 +53,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Лендинг для онлайн-курса',
       description: 'Разработка высококонверсионного лендинга для продажи образовательного онлайн-курса.',
       category: 'landing',
-      image: '/lovable-uploads/6f7969db-2238-4f94-9d71-467ebc04b2df.png',
+      image: 'https://iili.io/3BYIhdb.png',
       duration: '6 недель',
       improvement: 'Увеличение продаж на 127%',
       link: '/projects'
@@ -63,7 +63,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Туристический портал',
       description: 'Разработка информационного портала о путешествиях с интеграцией системы бронирования.',
       category: 'portal',
-      image: '/lovable-uploads/a8109479-8470-45e9-8c97-04f93323d18c.png',
+      image: 'https://iili.io/3BYIgrg.png',
       duration: '20 недель',
       improvement: 'Рост трафика на 215%',
       link: '/projects'
@@ -73,7 +73,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Агентство недвижимости',
       description: 'Создание сайта для агентства недвижимости с каталогом объектов и системой фильтрации.',
       category: 'corporate',
-      image: '/lovable-uploads/497dd202-53cf-4de2-8eac-5441e418ed63.png',
+      image: 'https://iili.io/3BYIj7j.png',
       duration: '14 недель',
       improvement: 'Увеличение числа запросов на 93%',
       link: '/projects'
@@ -139,6 +139,7 @@ const CaseStudies = ({ limit = 0 }) => {
                   src={study.image} 
                   alt={study.title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  loading="lazy"
                   onError={(e) => {
                     // Fallback if image fails to load
                     const target = e.target as HTMLImageElement;
