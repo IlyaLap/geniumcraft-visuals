@@ -77,6 +77,76 @@ const CaseStudies = ({ limit = 0 }) => {
       duration: '14 недель',
       improvement: 'Увеличение числа запросов на 93%',
       link: '/projects'
+    },
+    {
+      id: 7,
+      title: 'Управление паркингами в Гонконге',
+      description: 'Разработка системы для управления сетью паркингов второй по величине компании в Гонконге.',
+      category: 'system',
+      image: 'https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '24 недели',
+      improvement: 'Оптимизация работы на 59%',
+      link: '/projects'
+    },
+    {
+      id: 8,
+      title: 'Цветной металлопрокат',
+      description: 'Сайт для компании по производству и продаже цветного металлопроката с каталогом продукции.',
+      category: 'ecommerce',
+      image: 'https://images.unsplash.com/photo-1578835187997-047cd9cc87e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '15 недель',
+      improvement: 'Рост продаж на 76%',
+      link: '/projects'
+    },
+    {
+      id: 9,
+      title: 'Поставщик промышленного оборудования',
+      description: 'Создание сайта для ведущего поставщика промышленного оборудования в УРФО с интеграцией CRM-системы.',
+      category: 'corporate',
+      image: 'https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '18 недель',
+      improvement: 'Увеличение обращений на 104%',
+      link: '/projects'
+    },
+    {
+      id: 10,
+      title: 'Поставки гидравлического оборудования',
+      description: 'Разработка портала для компании, занимающейся поставками гидравлического и пневматического оборудования по России и СНГ.',
+      category: 'portal',
+      image: 'https://images.unsplash.com/photo-1581093458791-9a9cd44ef3d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '21 неделя',
+      improvement: 'Рост конверсии на 68%',
+      link: '/projects'
+    },
+    {
+      id: 11,
+      title: 'ДОПОГ под ключ',
+      description: 'Создание сайта для компании, предоставляющей услуги ДОПОГ под ключ на все марки автомобилей и прицепов.',
+      category: 'service',
+      image: 'https://images.unsplash.com/photo-1486435286105-92a01a0132bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '12 недель',
+      improvement: 'Рост заявок на 91%',
+      link: '/projects'
+    },
+    {
+      id: 12,
+      title: 'Производство деревянных панелей',
+      description: 'Разработка сайта-каталога для компании, производящей деревянные планки различных цветов для строительства.',
+      category: 'ecommerce',
+      image: 'https://images.unsplash.com/photo-1520646024765-41308d4b9585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '14 недель',
+      improvement: 'Увеличение продаж на 82%',
+      link: '/projects'
+    },
+    {
+      id: 13,
+      title: 'Детский сад',
+      description: 'Создание информационного сайта для детского сада с интерактивным календарем мероприятий и личным кабинетом для родителей.',
+      category: 'education',
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      duration: '11 недель',
+      improvement: 'Улучшение коммуникации на 133%',
+      link: '/projects'
     }
   ];
 
@@ -118,6 +188,9 @@ const CaseStudies = ({ limit = 0 }) => {
                 <SelectItem value="corporate">Корпоративные сайты</SelectItem>
                 <SelectItem value="landing">Лендинги</SelectItem>
                 <SelectItem value="portal">Порталы</SelectItem>
+                <SelectItem value="system">Системы управления</SelectItem>
+                <SelectItem value="service">Сервисные компании</SelectItem>
+                <SelectItem value="education">Образование</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -153,6 +226,9 @@ const CaseStudies = ({ limit = 0 }) => {
                   {study.category === 'corporate' && 'Корпоративный сайт'}
                   {study.category === 'landing' && 'Лендинг'}
                   {study.category === 'portal' && 'Портал'}
+                  {study.category === 'system' && 'Система управления'}
+                  {study.category === 'service' && 'Сервисная компания'}
+                  {study.category === 'education' && 'Образование'}
                 </Badge>
               </div>
               <CardContent className="p-6">
