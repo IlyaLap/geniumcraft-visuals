@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useAnimateOnScroll } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
@@ -10,6 +11,7 @@ import {
   SelectValue 
 } from '@/components/ui/select';
 import { Link } from 'react-router-dom';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
 const CaseStudies = ({ limit = 0 }) => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
@@ -123,9 +125,9 @@ const CaseStudies = ({ limit = 0 }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedCaseStudies.map((study, index) => (
-            <div 
+            <Card 
               key={study.id}
-              className={`glass-card overflow-hidden rounded-xl card-hover transition-all duration-500 transform ${
+              className={`overflow-hidden rounded-xl transition-all duration-500 transform bg-genium-black/40 border-genium-purple/20 hover:border-genium-purple/50 backdrop-blur-sm ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-10'
@@ -135,8 +137,14 @@ const CaseStudies = ({ limit = 0 }) => {
               <div className="relative h-60 overflow-hidden">
                 <img 
                   src={study.image} 
-                  alt={study.title} 
+                  alt={study.title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  onError={(e) => {
+                    // Fallback if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    console.error(`Failed to load image: ${target.src}`);
+                    target.src = "/placeholder.svg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-genium-black to-transparent opacity-60"></div>
                 <Badge className="absolute top-4 left-4 bg-genium-purple text-white border-none">
@@ -146,15 +154,15 @@ const CaseStudies = ({ limit = 0 }) => {
                   {study.category === 'portal' && 'Портал'}
                 </Badge>
               </div>
-              <div className="p-6">
+              <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
                 <p className="text-gray-300 mb-4">{study.description}</p>
-                <div className="flex justify-between text-sm text-gray-400">
-                  <span>Срок реализации: {study.duration}</span>
-                  <span className="text-genium-purple-light">{study.improvement}</span>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+              <CardFooter className="px-6 pb-6 pt-0 flex justify-between text-sm text-gray-400">
+                <span>Срок реализации: {study.duration}</span>
+                <span className="text-genium-purple-light">{study.improvement}</span>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 
