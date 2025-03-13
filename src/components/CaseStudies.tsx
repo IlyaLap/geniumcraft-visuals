@@ -81,11 +81,11 @@ const CaseStudies = ({ limit = 0 }) => {
     {
       id: 7,
       title: 'Управление паркингами в Гонконге',
-      description: 'Разработка системы для управления сетью паркингов второй по величине компании в Гонконге.',
-      category: 'system',
-      image: 'https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      description: 'Разработка веб-сайта для второй по величине компании в Гонконге, управляющей сетью паркингов, с возможностью приобретения сезонных абонементов онлайн.',
+      category: 'ecommerce',
+      image: 'https://iili.io/3BasXrG.png',
       duration: '24 недели',
-      improvement: 'Оптимизация работы на 59%',
+      improvement: 'Рост онлайн-продаж на 59%',
       link: '/projects'
     },
     {
@@ -93,7 +93,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Цветной металлопрокат',
       description: 'Сайт для компании по производству и продаже цветного металлопроката с каталогом продукции.',
       category: 'ecommerce',
-      image: 'https://images.unsplash.com/photo-1578835187997-047cd9cc87e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://iili.io/3BasNkl.png',
       duration: '15 недель',
       improvement: 'Рост продаж на 76%',
       link: '/projects'
@@ -103,7 +103,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Поставщик промышленного оборудования',
       description: 'Создание сайта для ведущего поставщика промышленного оборудования в УРФО с интеграцией CRM-системы.',
       category: 'corporate',
-      image: 'https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://iili.io/3BaskIS.png',
       duration: '18 недель',
       improvement: 'Увеличение обращений на 104%',
       link: '/projects'
@@ -111,9 +111,9 @@ const CaseStudies = ({ limit = 0 }) => {
     {
       id: 10,
       title: 'Поставки гидравлического оборудования',
-      description: 'Разработка портала для компании, занимающейся поставками гидравлического и пневматического оборудования по России и СНГ.',
-      category: 'portal',
-      image: 'https://images.unsplash.com/photo-1581093458791-9a9cd44ef3d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      description: 'Разработка интернет-магазина для компании, занимающейся поставками гидравлического и пневматического оборудования по России и СНГ.',
+      category: 'ecommerce',
+      image: 'https://iili.io/3Basj2f.png',
       duration: '21 неделя',
       improvement: 'Рост конверсии на 68%',
       link: '/projects'
@@ -123,7 +123,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'ДОПОГ под ключ',
       description: 'Создание сайта для компании, предоставляющей услуги ДОПОГ под ключ на все марки автомобилей и прицепов.',
       category: 'service',
-      image: 'https://images.unsplash.com/photo-1486435286105-92a01a0132bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://iili.io/3BasgEu.png',
       duration: '12 недель',
       improvement: 'Рост заявок на 91%',
       link: '/projects'
@@ -133,7 +133,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Производство деревянных панелей',
       description: 'Разработка сайта-каталога для компании, производящей деревянные планки различных цветов для строительства.',
       category: 'ecommerce',
-      image: 'https://images.unsplash.com/photo-1520646024765-41308d4b9585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://iili.io/3BasQTB.png',
       duration: '14 недель',
       improvement: 'Увеличение продаж на 82%',
       link: '/projects'
@@ -143,7 +143,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Детский сад',
       description: 'Создание информационного сайта для детского сада с интерактивным календарем мероприятий и личным кабинетом для родителей.',
       category: 'education',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://iili.io/3BaLAjS.png',
       duration: '11 недель',
       improvement: 'Улучшение коммуникации на 133%',
       link: '/projects'
