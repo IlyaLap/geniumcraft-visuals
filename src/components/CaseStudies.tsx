@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useAnimateOnScroll } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
@@ -22,7 +21,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Редизайн интернет-магазина',
       description: 'Полный редизайн интернет-магазина с улучшением пользовательского опыта и оптимизацией конверсии.',
       category: 'ecommerce',
-      image: '/lovable-uploads/70073ded-89f2-49ac-8504-08dfa7bb4fa1.png',
+      image: '/lovable-uploads/f85f4bd0-18e1-4dab-88f0-3620dedf00d1.png',
       duration: '10 недель',
       improvement: 'Увеличение конверсии на 47%',
       link: '/projects'
@@ -32,7 +31,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Корпоративный сайт для IT-компании',
       description: 'Разработка современного корпоративного сайта с фокусом на привлечение новых клиентов и найм специалистов.',
       category: 'corporate',
-      image: '/lovable-uploads/55970df9-5395-4d6a-ab07-24674b2d5869.png',
+      image: '/lovable-uploads/b0bd971c-95a1-43d8-a983-7e4b68334fbf.png',
       duration: '13 недель',
       improvement: 'Рост заявок на 83%',
       link: '/projects'
@@ -42,7 +41,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Сайт для юридической фирмы',
       description: 'Создание элегантного и профессионального сайта для юридической фирмы с системой онлайн-консультаций.',
       category: 'corporate',
-      image: '/lovable-uploads/8d370332-e7aa-41de-b797-bb97ac0b228e.png',
+      image: '/lovable-uploads/31c87bfe-2de4-4258-9af2-0fe81ce3e782.png',
       duration: '16 недель',
       improvement: 'Увеличение новых клиентов на 61%',
       link: '/projects'
@@ -52,7 +51,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Лендинг для онлайн-курса',
       description: 'Разработка высококонверсионного лендинга для продажи образовательного онлайн-курса.',
       category: 'landing',
-      image: '/lovable-uploads/9505374c-aecf-42ab-89cf-72d022c86629.png',
+      image: '/lovable-uploads/6f7969db-2238-4f94-9d71-467ebc04b2df.png',
       duration: '6 недель',
       improvement: 'Увеличение продаж на 127%',
       link: '/projects'
@@ -62,7 +61,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Туристический портал',
       description: 'Разработка информационного портала о путешествиях с интеграцией системы бронирования.',
       category: 'portal',
-      image: '/lovable-uploads/4202ec73-f4bd-416b-9396-fdad1164221e.png',
+      image: '/lovable-uploads/a8109479-8470-45e9-8c97-04f93323d18c.png',
       duration: '20 недель',
       improvement: 'Рост трафика на 215%',
       link: '/projects'
@@ -72,7 +71,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Агентство недвижимости',
       description: 'Создание сайта для агентства недвижимости с каталогом объектов и системой фильтрации.',
       category: 'corporate',
-      image: '/lovable-uploads/8afb9c3c-d663-4680-8c8f-c87f51017ad4.png',
+      image: '/lovable-uploads/497dd202-53cf-4de2-8eac-5441e418ed63.png',
       duration: '14 недель',
       improvement: 'Увеличение числа запросов на 93%',
       link: '/projects'
