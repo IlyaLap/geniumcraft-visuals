@@ -20,6 +20,15 @@ const Index = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Geniumsites - премиум веб-агентство, создающее высококонверсионные сайты с SEO-оптимизацией для российского рынка. Быстрая разработка за 24 часа.');
+    
+    // Ensure OG image is properly set
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute('content', 'https://iili.io/3CZZRe4.png');
   }, []);
 
   return (
