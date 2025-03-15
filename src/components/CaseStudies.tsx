@@ -82,7 +82,7 @@ const CaseStudies = ({ limit = 0 }) => {
       id: 7,
       title: 'Управление паркингами в Гонконге',
       description: 'Разработка веб-сайта для второй по величине компании в Гонконге, управляющей сетью паркингов, с возможностью приобретения сезонных абонементов онлайн.',
-      category: 'ecommerce',
+      category: 'parking',
       image: 'https://iili.io/3BasXrG.png',
       duration: '24 недели',
       improvement: 'Рост онлайн-продаж на 59%',
@@ -191,6 +191,7 @@ const CaseStudies = ({ limit = 0 }) => {
                 <SelectItem value="system">Системы управления</SelectItem>
                 <SelectItem value="service">Сервисные компании</SelectItem>
                 <SelectItem value="education">Образование</SelectItem>
+                <SelectItem value="parking">Автопаркинги</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -229,6 +230,7 @@ const CaseStudies = ({ limit = 0 }) => {
                   {study.category === 'system' && 'Система управления'}
                   {study.category === 'service' && 'Сервисная компания'}
                   {study.category === 'education' && 'Образование'}
+                  {study.category === 'parking' && 'Автопаркинги'}
                 </Badge>
               </div>
               <CardContent className="p-6">
