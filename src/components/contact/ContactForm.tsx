@@ -78,6 +78,9 @@ const ContactForm = () => {
       web3FormsData.append('access_key', 'cef68653-cc87-49ac-922d-3a04d7ac7989');
       web3FormsData.append('subject', `Новая заявка от ${formData.name}`);
       
+      // Add preview_url parameter to enable rich URL previews in WhatsApp and other messaging apps
+      web3FormsData.append('preview_url', 'true');
+      
       // Construct detailed message
       const message = `
         Имя: ${formData.name}
