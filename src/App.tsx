@@ -33,33 +33,41 @@ const ScrollToTop = () => {
   return null;
 }
 
+// Wrap the Routes in their own component to avoid hooks usage issues
+const AppRoutes = () => {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/increase-conversion" element={<IncreaseConversionBlog />} />
+        <Route path="/blog/seo-optimization-2025" element={<SeoOptimizationBlog />} />
+        <Route path="/blog/psychology-of-design" element={<PsychologyOfDesignBlog />} />
+        <Route path="/blog/mobile-optimization" element={<MobileOptimizationBlog />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/contact" element={<ContactsPage />} />
+        <Route path="/order" element={<OrderWebsitePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/case-studies" element={<ProjectsPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+// Main App component properly structured to avoid hook issues
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/increase-conversion" element={<IncreaseConversionBlog />} />
-          <Route path="/blog/seo-optimization-2025" element={<SeoOptimizationBlog />} />
-          <Route path="/blog/psychology-of-design" element={<PsychologyOfDesignBlog />} />
-          <Route path="/blog/mobile-optimization" element={<MobileOptimizationBlog />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/contact" element={<ContactsPage />} />
-          <Route path="/order" element={<OrderWebsitePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/case-studies" element={<ProjectsPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-use" element={<TermsOfUse />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AppRoutes />
     </TooltipProvider>
   </QueryClientProvider>
 );
