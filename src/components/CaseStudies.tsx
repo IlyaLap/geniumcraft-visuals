@@ -23,7 +23,8 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Редизайн интернет-магазина',
       description: 'Полный редизайн интернет-магазина с улучшением пользовательского опыта и оптимизацией конверсии.',
       category: 'ecommerce',
-      image: 'https://iili.io/3BYIKga.png',
+      image: '/lovable-uploads/6b971fe3-0408-439d-b48a-58f5e517b74c.png',
+      fallbackImage: 'https://iili.io/3BYIKga.png',
       duration: '10 недель',
       improvement: 'Увеличение конверсии на 47%',
       link: '/projects'
@@ -158,6 +159,14 @@ const CaseStudies = ({ limit = 0 }) => {
     ? filteredCaseStudies.slice(0, limit) 
     : filteredCaseStudies;
 
+  // Function to handle image loading errors
+  const handleImageError = (e, fallbackSrc) => {
+    console.log(`Image failed to load: ${e.target.src}, falling back to: ${fallbackSrc}`);
+    e.target.src = fallbackSrc || "/placeholder.svg";
+    // Remove the error handler to prevent infinite loops if fallback also fails
+    e.target.onerror = null;
+  };
+
   return (
     <section className="py-20 bg-genium-black-light" id="case-studies">
       <div 
@@ -214,12 +223,7 @@ const CaseStudies = ({ limit = 0 }) => {
                   alt={study.title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   loading="lazy"
-                  onError={(e) => {
-                    // Fallback if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    console.error(`Failed to load image: ${target.src}`);
-                    target.src = "/placeholder.svg";
-                  }}
+                  onError={(e) => handleImageError(e, study.fallbackImage)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-genium-black to-transparent opacity-60"></div>
                 <Badge className="absolute top-4 left-4 bg-genium-purple text-white border-none">

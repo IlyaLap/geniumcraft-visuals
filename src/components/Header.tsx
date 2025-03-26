@@ -37,6 +37,11 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/45fe4c4d-342a-419f-ab81-e7b1169319b1.png" 
+              alt="Geniumsites Logo" 
+              className="h-8 w-auto mr-2"
+            />
             <span className="text-white font-display text-2xl font-bold">
               Genium<span className="text-genium-purple">sites</span>
             </span>

@@ -1,3 +1,4 @@
+
 import { Linkedin, MapPinned, Phone, Mail, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
           <div className="space-y-4">
             <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/45fe4c4d-342a-419f-ab81-e7b1169319b1.png" 
+                alt="Geniumsites Logo" 
+                className="h-8 w-auto mr-2"
+              />
               <span className="text-white font-display text-2xl font-bold">
                 Genium<span className="text-genium-purple">sites</span>
               </span>
@@ -67,17 +73,6 @@ const Footer = () => {
                 aria-label="YouTube"
               >
                 <Youtube size={18} />
-              </a>
-              <a 
-                href="https://rutube.ru/channel/58553409/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-genium-purple/10 flex items-center justify-center text-genium-purple-light hover:bg-genium-purple/20 transition-colors"
-                aria-label="Rutube"
-              >
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.5 12C17.5 8.41 14.59 5.5 11 5.5s-6.5 2.91-6.5 6.5c0 1.47.49 2.82 1.3 3.91C6.92 17.92 8.83 19 11 19c3.59 0 6.5-2.91 6.5-6.5zm3 0c0 5.25-4.25 9.5-9.5 9.5S1.5 17.25 1.5 12 5.75 2.5 11 2.5s9.5 4.25 9.5 9.5zM11 13.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/>
-                </svg>
               </a>
             </div>
           </div>
