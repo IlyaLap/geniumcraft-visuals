@@ -10,7 +10,7 @@ const ContactSidebar = () => {
       <div className="relative h-full flex flex-col items-center justify-center p-12 text-center">
         <div className="p-4 rounded-full bg-white/10 backdrop-blur-md mb-8 purple-glow">
           <img 
-            src="/lovable-uploads/eye-logo.png" 
+            src="https://i.ibb.co/chvZ1gkT/Genium-Logo-transparent-removebg-preview.png" 
             alt="Geniumsites Vision Logo" 
             className="w-20 h-20 object-contain"
           />
