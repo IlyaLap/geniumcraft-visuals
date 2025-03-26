@@ -5,37 +5,66 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useAnimateOnScroll } from '@/lib/animations';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const BlogPost2 = () => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
+  const publishDate = "2025-02-15"; // ISO format for schema
+  const modifiedDate = "2025-02-20"; // ISO format for schema
   
   useEffect(() => {
-    // Set metadata for SEO
-    document.title = "SEO-оптимизация в 2025 году: что работает, а что нет | Geniumsites";
-    
-    // Create meta description if it doesn't exist
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'Последние тренды и изменения в алгоритмах поисковых систем, которые влияют на ранжирование вашего сайта в 2025 году.');
-
     // Scroll to top on page load
     window.scrollTo(0, 0);
   }, []);
 
+  // Schema data for this article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SEO-оптимизация в 2025 году: что работает, а что нет",
+    "description": "Последние тренды и изменения в алгоритмах поисковых систем, которые влияют на ранжирование вашего сайта в 2025 году.",
+    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "datePublished": publishDate,
+    "dateModified": modifiedDate,
+    "author": {
+      "@type": "Organization",
+      "name": "Geniumsites",
+      "url": "https://geniumsites.ru"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Geniumsites",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://iili.io/3CZZRe4.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://geniumsites.ru/blog/seo-optimization-2025"
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>SEO-оптимизация в 2025 году: что работает, а что нет | Geniumsites</title>
+        <meta name="description" content="Последние тренды и изменения в алгоритмах поисковых систем, которые влияют на ранжирование вашего сайта в 2025 году. Актуальные стратегии SEO." />
+        <meta name="keywords" content="SEO, поисковая оптимизация, Яндекс SEO, продвижение сайта, алгоритмы, ранжирование, SEO тренды 2025" />
+        <link rel="canonical" href="https://geniumsites.ru/blog/seo-optimization-2025" />
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+      </Helmet>
+      
       <Header />
       <main className="flex-grow">
         <section className="py-20 bg-genium-black">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
-              <Link to="/blog" className="inline-flex items-center text-genium-purple-light hover:text-genium-purple transition-colors mb-8">
+              <Link to="/blog" className="inline-flex items-center text-genium-purple-light hover:text-genium-purple transition-colors mb-8" aria-label="Вернуться к блогу">
                 <ArrowLeft size={16} className="mr-2" />
                 Вернуться к блогу
               </Link>
@@ -49,7 +78,7 @@ const BlogPost2 = () => {
               <div className="flex items-center gap-6 text-sm text-gray-400 mb-8">
                 <div className="flex items-center">
                   <Calendar size={14} className="mr-1" />
-                  15 февраля 2025
+                  <time dateTime="2025-02-15">15 февраля 2025</time>
                 </div>
                 <div className="flex items-center">
                   <Clock size={14} className="mr-1" />
@@ -65,7 +94,7 @@ const BlogPost2 = () => {
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}>
             <div className="max-w-3xl mx-auto">
-              <div className="glass-card p-8 rounded-xl mb-10">
+              <article className="glass-card p-8 rounded-xl mb-10">
                 <img 
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
                   alt="SEO-оптимизация в 2025 году"
@@ -177,11 +206,22 @@ const BlogPost2 = () => {
                     с последними изменениями алгоритмов.
                   </p>
                   
-                  <p className="text-gray-300 mt-8">
-                    Нужна помощь с SEO-оптимизацией вашего сайта? Команда Geniumsites специализируется на 
-                    современных методах SEO, которые действительно работают в 2025 году. Свяжитесь с нами для 
-                    проведения аудита и разработки эффективной стратегии.
-                  </p>
+                  <div className="text-gray-300 mt-8">
+                    <p>
+                      Нужна помощь с SEO-оптимизацией вашего сайта? 
+                      <Link to="/order" className="text-genium-purple-light hover:text-genium-purple ml-1">
+                        Закажите SEO-аудит у наших специалистов.
+                      </Link>
+                    </p>
+                    
+                    <p className="mt-4">
+                      Изучите также нашу статью 
+                      <Link to="/blog/increase-conversion" className="text-genium-purple-light hover:text-genium-purple mx-1">
+                        Как увеличить конверсию вашего сайта на 50%
+                      </Link>
+                      для комплексного подхода к улучшению вашего сайта.
+                    </p>
+                  </div>
                 </div>
                 
                 <div className="mt-10 pt-8 border-t border-genium-purple/20">
@@ -190,15 +230,28 @@ const BlogPost2 = () => {
                       <Badge variant="outline" className="bg-genium-purple/10 text-genium-purple-light border-genium-purple/30">
                         SEO
                       </Badge>
+                      <Badge variant="outline" className="bg-genium-purple/10 text-genium-purple-light border-genium-purple/30 ml-2">
+                        Продвижение
+                      </Badge>
                     </div>
-                    <Link to="/order">
-                      <Button className="cta-button">
-                        Заказать SEO-аудит
+                    <div className="flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        className="flex items-center gap-2 border-genium-purple/30 text-gray-300 hover:bg-genium-purple/20"
+                        aria-label="Поделиться статьей"
+                      >
+                        <Share2 size={16} />
+                        Поделиться
                       </Button>
-                    </Link>
+                      <Link to="/order">
+                        <Button className="cta-button">
+                          Заказать SEO-аудит
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </section>

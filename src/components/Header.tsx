@@ -2,11 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +21,26 @@ const Header = () => {
   useEffect(() => {
     // Scroll to top when navigating to a new page
     window.scrollTo(0, 0);
-  }, [window.location.pathname]);
+    // Close mobile menu when navigating
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const isActive = (path: string) => {
+    return location.pathname === path ? 'text-genium-purple-light' : 'text-white';
+  };
+
+  const navLinks = [
+    { title: "Главная", path: "/" },
+    { title: "О нас", path: "/about" },
+    { title: "Услуги", path: "/services" },
+    { title: "Проекты", path: "/projects" },
+    { title: "Блог", path: "/blog" },
+    { title: "Контакты", path: "/contacts" }
+  ];
 
   return (
     <header 
@@ -36,9 +52,9 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" aria-label="Главная страница Geniumsites">
             <img 
-              src="/lovable-uploads/4363ef04-df3b-4335-8e63-db5f2ad2479d.png" 
+              src="/lovable-uploads/0d1e8624-b745-4f54-8566-e41af3bb63d8.png" 
               alt="Geniumsites Logo" 
               className="h-8 w-auto mr-2"
             />
@@ -49,28 +65,21 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-white hover:text-genium-purple-light transition-colors">
-            Главная
-          </Link>
-          <Link to="/about" className="text-white hover:text-genium-purple-light transition-colors">
-            О нас
-          </Link>
-          <Link to="/services" className="text-white hover:text-genium-purple-light transition-colors">
-            Услуги
-          </Link>
-          <Link to="/projects" className="text-white hover:text-genium-purple-light transition-colors">
-            Проекты
-          </Link>
-          <Link to="/blog" className="text-white hover:text-genium-purple-light transition-colors">
-            Блог
-          </Link>
-          <Link to="/contacts" className="text-white hover:text-genium-purple-light transition-colors">
-            Контакты
-          </Link>
+        <nav className="hidden md:flex items-center space-x-8" aria-label="Основная навигация">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`${isActive(link.path)} hover:text-genium-purple-light transition-colors`}
+              aria-current={location.pathname === link.path ? 'page' : undefined}
+            >
+              {link.title}
+            </Link>
+          ))}
           <Button 
             className="cta-button"
             onClick={() => window.location.href = '/order'}
+            aria-label="Заказать сайт"
           >
             Заказать сайт
           </Button>
@@ -81,7 +90,8 @@ const Header = () => {
           <button 
             onClick={toggleMobileMenu}
             className="p-2 text-white focus:outline-none"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Закрыть меню" : "Открыть меню"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -94,56 +104,27 @@ const Header = () => {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
         style={{ top: '60px' }}
+        aria-hidden={!isMobileMenuOpen}
       >
-        <nav className="flex flex-col p-8 space-y-8 bg-genium-black">
-          <Link 
-            to="/" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Главная
-          </Link>
-          <Link 
-            to="/about" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            О нас
-          </Link>
-          <Link 
-            to="/services" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Услуги
-          </Link>
-          <Link 
-            to="/projects" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Проекты
-          </Link>
-          <Link 
-            to="/blog" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Блог
-          </Link>
-          <Link 
-            to="/contacts" 
-            className="text-lg text-white hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Контакты
-          </Link>
+        <nav className="flex flex-col p-8 space-y-8 bg-genium-black" aria-label="Мобильная навигация">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`text-lg ${isActive(link.path)} hover:text-genium-purple transition-colors py-2 border-b border-genium-black-light`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-current={location.pathname === link.path ? 'page' : undefined}
+            >
+              {link.title}
+            </Link>
+          ))}
           <Button 
             className="cta-button mt-4 w-full"
             onClick={() => {
               window.location.href = '/order';
               setIsMobileMenuOpen(false);
             }}
+            aria-label="Заказать сайт"
           >
             Заказать сайт
           </Button>

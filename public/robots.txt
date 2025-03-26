@@ -1,0 +1,18 @@
+
+User-agent: *
+Allow: /
+
+# Disallow access to admin or private sections
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://geniumsites.ru/sitemap.xml
+
+# Yandex specific directives
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Host: geniumsites.ru
+Sitemap: https://geniumsites.ru/sitemap.xml

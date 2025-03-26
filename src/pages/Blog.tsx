@@ -1,5 +1,6 @@
+
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAnimateOnScroll } from '@/lib/animations';
 import { Calendar, Clock, Search, ChevronRight, ArrowUpRight } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 // Sample blog posts data
 const blogPosts = [
@@ -17,6 +19,7 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Конверсия',
     date: '15 декабря 2024',
+    dateISO: '2024-12-15',
     readTime: '7 мин',
     slug: '/blog/increase-conversion'
   },
@@ -27,6 +30,7 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'SEO',
     date: '10 января 2025',
+    dateISO: '2025-01-10',
     readTime: '10 мин',
     slug: '/blog/seo-optimization-2025'
   },
@@ -37,6 +41,7 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Дизайн',
     date: '5 февраля 2025',
+    dateISO: '2025-02-05',
     readTime: '5 мин',
     slug: '/blog/psychology-of-design'
   },
@@ -47,6 +52,7 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
     category: 'Оптимизация',
     date: '28 февраля 2025',
+    dateISO: '2025-02-28',
     readTime: '8 мин',
     slug: '/blog/mobile-optimization'
   }
@@ -61,20 +67,12 @@ const BlogPage = () => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('Все');
+  const location = useLocation();
   
   useEffect(() => {
-    // Set metadata for SEO
-    document.title = "Блог | Geniumsites - Премиум веб-сайты";
-    
-    // Create meta description if it doesn't exist
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'Блог Geniumsites о веб-разработке, дизайне, SEO и маркетинге. Полезные статьи, советы и тренды для успешного онлайн-присутствия в России.');
-  }, []);
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Filter posts based on search query and active category
   const filteredPosts = blogPosts.filter(post => {
@@ -84,8 +82,47 @@ const BlogPage = () => {
     return matchesSearch && matchesCategory;
   });
 
+  // Create schema data for the blog page
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "headline": "Блог Geniumsites - Статьи о веб-разработке, дизайне и SEO",
+    "description": "Полезные статьи о веб-разработке, дизайне, SEO и маркетинге от экспертов Geniumsites",
+    "url": "https://geniumsites.ru/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Geniumsites",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://iili.io/3CZZRe4.png"
+      }
+    },
+    "blogPost": blogPosts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": post.image,
+      "datePublished": post.dateISO,
+      "author": {
+        "@type": "Organization",
+        "name": "Geniumsites"
+      },
+      "url": `https://geniumsites.ru${post.slug}`
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Блог | Geniumsites - Премиум веб-сайты с высокой конверсией</title>
+        <meta name="description" content="Блог Geniumsites о веб-разработке, дизайне, SEO и маркетинге. Полезные статьи, советы и тренды для успешного онлайн-присутствия в России." />
+        <meta name="keywords" content="блог, веб-дизайн, SEO, разработка сайтов, маркетинг, конверсия, оптимизация" />
+        <link rel="canonical" href="https://geniumsites.ru/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify(blogSchema)}
+        </script>
+      </Helmet>
+      
       <Header />
       <main className="flex-grow">
         <section className="py-20 bg-genium-black">
@@ -107,6 +144,7 @@ const BlogPage = () => {
                   className="bg-genium-black/40 border-genium-purple/30 focus:border-genium-purple py-6 pl-12"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  aria-label="Поиск по статьям"
                 />
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
               </div>
@@ -121,6 +159,7 @@ const BlogPage = () => {
                       "border-genium-purple/30 text-gray-300 hover:bg-genium-purple/20"
                     }
                     onClick={() => setActiveCategory(category)}
+                    aria-pressed={activeCategory === category}
                   >
                     {category}
                   </Button>
@@ -136,7 +175,7 @@ const BlogPage = () => {
           }`}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredPosts.map((post, index) => (
-                <div 
+                <article 
                   key={post.id}
                   className="glass-card overflow-hidden rounded-xl card-hover group transition-all duration-700 transform"
                   style={{ transitionDelay: `${index * 150}ms` }}
@@ -146,6 +185,7 @@ const BlogPage = () => {
                       src={post.image} 
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-genium-black to-transparent opacity-70"></div>
                     <Badge 
@@ -158,16 +198,16 @@ const BlogPage = () => {
                     <div className="flex items-center gap-6 text-sm text-gray-400 mb-3">
                       <div className="flex items-center">
                         <Calendar size={14} className="mr-1" />
-                        {post.date}
+                        <time dateTime={post.dateISO}>{post.date}</time>
                       </div>
                       <div className="flex items-center">
                         <Clock size={14} className="mr-1" />
                         {post.readTime}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{post.title}</h3>
+                    <h2 className="text-xl font-bold text-white mb-3">{post.title}</h2>
                     <p className="text-gray-300 mb-6">{post.excerpt}</p>
-                    <Link to={post.slug}>
+                    <Link to={post.slug} aria-label={`Читать полную статью: ${post.title}`}>
                       <Button 
                         variant="ghost" 
                         className="text-genium-purple-light hover:text-white hover:bg-genium-purple/20 transition-all duration-300 w-full"
@@ -176,7 +216,7 @@ const BlogPage = () => {
                       </Button>
                     </Link>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
             
@@ -191,6 +231,7 @@ const BlogPage = () => {
                     setSearchQuery('');
                     setActiveCategory('Все');
                   }}
+                  aria-label="Сбросить фильтры поиска"
                 >
                   Сбросить фильтры
                 </Button>
@@ -198,7 +239,7 @@ const BlogPage = () => {
             )}
             
             <div className="text-center mt-16">
-              <Button className="cta-button-outline">
+              <Button className="cta-button-outline" aria-label="Загрузить больше статей">
                 Загрузить еще <ChevronRight size={16} className="ml-1" />
               </Button>
             </div>
