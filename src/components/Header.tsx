@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/45fe4c4d-342a-419f-ab81-e7b1169319b1.png" 
+              src="/lovable-uploads/4363ef04-df3b-4335-8e63-db5f2ad2479d.png" 
               alt="Geniumsites Logo" 
               className="h-8 w-auto mr-2"
             />

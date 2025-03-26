@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useAnimateOnScroll } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
@@ -23,7 +22,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Редизайн интернет-магазина',
       description: 'Полный редизайн интернет-магазина с улучшением пользовательского опыта и оптимизацией конверсии.',
       category: 'ecommerce',
-      image: '/lovable-uploads/6b971fe3-0408-439d-b48a-58f5e517b74c.png',
+      image: 'https://i.ibb.co/WpcwH111/Screenshot-2025-03-13-at-15-58-14.png',
       fallbackImage: 'https://iili.io/3BYIKga.png',
       duration: '10 недель',
       improvement: 'Увеличение конверсии на 47%',
@@ -34,7 +33,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Корпоративный сайт для IT-компании',
       description: 'Разработка современного корпоративного сайта с фокусом на привлечение новых клиентов и найм специалистов.',
       category: 'corporate',
-      image: 'https://iili.io/3BYIwkx.png',
+      image: 'https://i.ibb.co/2YpPByF5/Screenshot-2025-03-13-at-15-57-04.png',
       duration: '13 недель',
       improvement: 'Рост заявок на 83%',
       link: '/projects'
@@ -44,9 +43,9 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Сайт для юридической фирмы',
       description: 'Создание элегантного и профессионального сайта для юридической фирмы с системой онлайн-консультаций.',
       category: 'corporate',
-      image: 'https://iili.io/3BYIcml.png',
+      image: 'https://i.ibb.co/nN7Z6FL9/Screenshot-2025-03-13-at-15-58-31.png',
       duration: '16 недель',
-      improvement: 'Увеличение новых клиентов на 61%',
+      improvement: 'Увеличение новых клиентов на 27%',
       link: '/projects'
     },
     {
@@ -54,7 +53,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Лендинг для онлайн-курса',
       description: 'Разработка высококонверсионного лендинга для продажи образовательного онлайн-курса.',
       category: 'landing',
-      image: 'https://iili.io/3BYIhdb.png',
+      image: 'https://i.ibb.co/cMhVkf0/Screenshot-2025-03-13-at-16-02-50.png',
       duration: '6 недель',
       improvement: 'Увеличение продаж на 127%',
       link: '/projects'
@@ -64,7 +63,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Туристический портал',
       description: 'Разработка информационного портала о путешествиях с интеграцией системы бронирования.',
       category: 'portal',
-      image: 'https://iili.io/3BYIgrg.png',
+      image: 'https://i.ibb.co/nMQH8jFQ/Screenshot-2025-03-13-at-16-02-40.png',
       duration: '20 недель',
       improvement: 'Рост трафика на 215%',
       link: '/projects'
@@ -74,7 +73,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Агентство недвижимости',
       description: 'Создание сайта для агентства недвижимости с каталогом объектов и системой фильтрации.',
       category: 'corporate',
-      image: 'https://iili.io/3BYIj7j.png',
+      image: 'https://i.ibb.co/q3J3j0j9/Screenshot-2025-03-13-at-16-02-28.png',
       duration: '14 недель',
       improvement: 'Увеличение числа запросов на 93%',
       link: '/projects'
@@ -84,7 +83,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Управление паркингами в Гонконге',
       description: 'Разработка веб-сайта для второй по величине компании в Гонконге, управляющей сетью паркингов, с возможностью приобретения сезонных абонементов онлайн.',
       category: 'parking',
-      image: 'https://iili.io/3BasXrG.png',
+      image: 'https://i.ibb.co/k27j55M0/Screenshot-2025-03-13-at-16-51-25.png',
       duration: '24 недели',
       improvement: 'Рост онлайн-продаж на 59%',
       link: '/projects'
@@ -94,9 +93,9 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Цветной металлопрокат',
       description: 'Сайт для компании по производству и продаже цветного металлопроката с каталогом продукции.',
       category: 'ecommerce',
-      image: 'https://iili.io/3BasNkl.png',
+      image: 'https://i.ibb.co/VcxsbTJk/Screenshot-2025-03-13-at-16-55-49.png',
       duration: '15 недель',
-      improvement: 'Рост продаж на 76%',
+      improvement: 'Рост продаж на 34%',
       link: '/projects'
     },
     {
@@ -104,7 +103,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Поставщик промышленного оборудования',
       description: 'Создание сайта для ведущего поставщика промышленного оборудования в УРФО с интеграцией CRM-системы.',
       category: 'corporate',
-      image: 'https://iili.io/3BaskIS.png',
+      image: 'https://i.ibb.co/Kx3WkNYm/Screenshot-2025-03-13-at-16-56-22.png',
       duration: '18 недель',
       improvement: 'Увеличение обращений на 104%',
       link: '/projects'
@@ -114,7 +113,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Поставки гидравлического оборудования',
       description: 'Разработка интернет-магазина для компании, занимающейся поставками гидравлического и пневматического оборудования по России и СНГ.',
       category: 'ecommerce',
-      image: 'https://iili.io/3Basj2f.png',
+      image: 'https://i.ibb.co/7Jsqft74/Screenshot-2025-03-13-at-16-56-40.png',
       duration: '21 неделя',
       improvement: 'Рост конверсии на 68%',
       link: '/projects'
@@ -124,7 +123,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'ДОПОГ под ключ',
       description: 'Создание сайта для компании, предоставляющей услуги ДОПОГ под ключ на все марки автомобилей и прицепов.',
       category: 'service',
-      image: 'https://iili.io/3BasgEu.png',
+      image: 'https://i.ibb.co/fz0MKsmY/Screenshot-2025-03-13-at-16-57-25.png',
       duration: '12 недель',
       improvement: 'Рост заявок на 91%',
       link: '/projects'
@@ -134,7 +133,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Производство деревянных панелей',
       description: 'Разработка сайта-каталога для компании, производящей деревянные планки различных цветов для строительства.',
       category: 'ecommerce',
-      image: 'https://iili.io/3BasQTB.png',
+      image: 'https://i.ibb.co/RGhjhn7N/Screenshot-2025-03-13-at-16-57-54.png',
       duration: '14 недель',
       improvement: 'Увеличение продаж на 82%',
       link: '/projects'
@@ -144,7 +143,7 @@ const CaseStudies = ({ limit = 0 }) => {
       title: 'Детский сад',
       description: 'Создание информационного сайта для детского сада с интерактивным календарем мероприятий и личным кабинетом для родителей.',
       category: 'education',
-      image: 'https://iili.io/3BaLAjS.png',
+      image: 'https://i.ibb.co/7JzJ1vf2/Screenshot-2025-03-13-at-16-58-12.png',
       duration: '11 недель',
       improvement: 'Улучшение коммуникации на 133%',
       link: '/projects'
