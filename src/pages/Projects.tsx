@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -13,6 +12,9 @@ const ProjectsPage = () => {
   const { elementRef, isVisible } = useAnimateOnScroll(0.1);
   
   useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+
     // Set metadata for SEO
     document.title = "Проекты | Geniumsites - Премиум веб-сайты";
     
