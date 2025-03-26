@@ -1,4 +1,6 @@
 
+# Robots.txt for Geniumsites
+
 User-agent: *
 Allow: /
 
@@ -6,13 +8,27 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-# Sitemap
-Sitemap: https://geniumsites.ru/sitemap.xml
+# Specific directives for search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-# Yandex specific directives
 User-agent: Yandex
 Allow: /
 Disallow: /admin/
 Disallow: /private/
+
+# Sitemap location
+Sitemap: https://geniumsites.ru/sitemap.xml
+
+# Additional bot-specific rules
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Host and Sitemap for Yandex
 Host: geniumsites.ru
 Sitemap: https://geniumsites.ru/sitemap.xml
