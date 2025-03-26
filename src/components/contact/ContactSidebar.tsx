@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const ContactSidebar = () => {
   return (
     <div className="relative hidden lg:block">
@@ -7,10 +9,11 @@ const ContactSidebar = () => {
       </div>
       <div className="relative h-full flex flex-col items-center justify-center p-12 text-center">
         <div className="p-4 rounded-full bg-white/10 backdrop-blur-md mb-8 purple-glow">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M22 12C19.333 16.667 16 19 12 19C8 19 4.667 16.667 2 12C4.667 7.333 8 5 12 5C16 5 19.333 7.333 22 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <img 
+            src="/lovable-uploads/eye-logo.png" 
+            alt="Geniumsites Vision Logo" 
+            className="w-20 h-20 object-contain"
+          />
         </div>
 
         <h3 className="text-2xl font-bold text-white mb-4">Премиум веб-сайты для вашего бизнеса</h3>
